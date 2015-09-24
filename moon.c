@@ -9,9 +9,9 @@
  * moon服务器主程序
  */
 
-
 #include <stdio.h>
 #include "configure.h"
+#include "function.h"
 
 /*
  * function: Debug
