@@ -1,5 +1,5 @@
 # Description
-一个支持PHP的Web服务器。  
+最近在使用apache，所以参考了一些资料，用C语言写了一个支持PHP的Web服务器。  
 
 # Feedback
 - 微博：[@AnSwEr不是答案](http://weibo.com/1783591593)
