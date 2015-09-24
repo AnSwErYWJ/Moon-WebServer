@@ -15,4 +15,6 @@
 #define TRUE 1
 #define FALSE 0
 
+#define PORT 8080 //apache default port
+
 #endif
