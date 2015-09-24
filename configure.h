@@ -5,6 +5,10 @@
 	> Created Time: 2015年09月24日 星期四 17时27分20秒
  ************************************************************************/
 
+/*
+ *Confirguration
+ */
+
 #ifndef _CONFIGURE_H
 #define _CONFIGURE_H
 
