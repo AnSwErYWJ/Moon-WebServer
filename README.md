@@ -13,7 +13,7 @@ sudo ./Moon
 #打开浏览器，在地址栏输入127.0.0.1:8080
 make clean
 ```
-## commit
+## Commit
 ```
 chmod +x git.sh //when first use
 ./git.sh filename
