@@ -1,11 +1,11 @@
-# moon——月亮服务器
+# Moon——月亮服务器
 ## Description
-最近在使用apache，所以参考了一些资料，用C语言写了一个支持PHP的Web服务器。因为完成时临近是中秋节，所以取名为moon.  
+最近在使用apache，所以参考了一些资料，用C语言写了一个支持PHP的Web服务器。因为完成时临近是中秋节，所以取名为Moon.  
 
 ## Compile and run
 ```
 make
-sudo ./moon
+sudo ./Moon
 #打开浏览器，在地址栏输入127.0.0.1:8080
 make clean
 ```
