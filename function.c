@@ -18,7 +18,7 @@
  * 套接字使用字节流读写时内核套接字的缓冲区有可能会达到极限.
  */
 
- ssize_t safe_read(int fd,void *vptr,size_t n)
+extern ssize_t safe_read(int fd,void *vptr,size_t n)
  {
      char *ptr = vptr;
      size_t nleft = n;
@@ -43,7 +43,7 @@
      return (n - nleft);
  }
 
-ssize_t safe_write(int fd,const void *vptr,size_t n)
+extern ssize_t safe_write(int fd,const void *vptr,size_t n)
 {
     const char *ptr = vptr;
     ssize_t nleft = n;
