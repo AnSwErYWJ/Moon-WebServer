@@ -8,4 +8,4 @@ moon.o: moon.c configure.h function.h configure.h
 function.o: function.c function.h
 	$(CC) -c function.c
 clean:
-	rm -f *.o moon
+	rm -f *.o 
