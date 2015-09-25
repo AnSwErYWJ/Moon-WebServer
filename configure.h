@@ -17,4 +17,10 @@
 
 #define PORT 8080 //apache default port
 
+#define MAXSIZE 1024 //BufSize
+
+char status[] = "HTTP/1.0 200 OK\r\n";
+char header[] = "Server: A Simple Web Server\r\nContent-Type: text/html\r\n\r\n";
+char body[] = "<html><head><title>A Simple Web Server</title></head><body><h2>Welcome!</h2><p>This is shiyanlou!</p></body></html>";
+
 #endif
