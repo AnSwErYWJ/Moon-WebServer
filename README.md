@@ -3,6 +3,7 @@
 最近在使用apache，所以参考了一些资料，用C语言写了一个支持PHP的Web服务器。因为完成时临近是中秋节，所以取名为Moon.  
 
 ## Feature
+- 支持多线程
 - 支持FastCGI
 - 支持PHP语言
 - 实现GET方法
