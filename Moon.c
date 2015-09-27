@@ -17,6 +17,8 @@
 #include <arpa/inet.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <time.h>
+#include <sys/types.h>
 
 /*
 * listen()的包裹函数，可以自定义backlog
@@ -41,6 +43,9 @@ int main(int argc,const char *argv[])
     socklen_t cli_addr_size;
     int thread_count = 0;
     pthread_t threads[MAX_THREAD_NUM];
+    FILE *fp_log;
+    time_t t;   
+    char ipaddress[20];
 
     /*get server sockfd*/
     ser_sockfd = socket(PF_INET,SOCK_STREAM,0);
@@ -69,13 +74,30 @@ int main(int argc,const char *argv[])
        
         cli_sockfd = accept(ser_sockfd,(struct sockaddr *)&cli_addr,&cli_addr_size);
         if(cli_sockfd == -1)
+        {
             Debug("Error:accept()\n");
-
+        }
+        
+        /*log*/
+        time(&t);
+        
+        fp_log = fopen("cli_log.txt","a+");
+        if(fp_log == NULL)
+        {
+            Debug("Error:fopen()\n");
+        }
+        
+        fputs(ctime(&t),fp_log);
+        inet_ntop(AF_INET,(void *)&cli_addr.sin_addr,ipaddress,16);
+        fprintf(fp_log,"ipaddress:%s port:%d\n",ipaddress,cli_addr.sin_port);
+       
+        /*多线程*/
         ret = pthread_create(threads+(thread_count++),NULL,(void *)handleRequest,&cli_sockfd);
         if(ret != 0)
         {
             Debug("Error:pthread_create\n");
         }
+        fclose(fp_log);
     }
 
     /*close fd*/
