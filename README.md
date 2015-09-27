@@ -5,6 +5,7 @@
 ## Feature
 - 支持多线程
 - 支持FastCGI
+- 实现日志系统
 - 支持PHP语言
 - 实现GET方法
 - 支持处理HTML
