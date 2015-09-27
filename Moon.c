@@ -16,6 +16,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <stdlib.h>
+#include <pthread.h>
 
 /*
 * listen()的包裹函数，可以自定义backlog
@@ -38,6 +39,8 @@ int main(int argc,const char *argv[])
     int ser_sockfd,cli_sockfd;
     struct sockaddr_in ser_addr,cli_addr;
     socklen_t cli_addr_size;
+    int thread_count = 0;
+    pthread_t threads[MAX_THREAD_NUM];
 
     /*get server sockfd*/
     ser_sockfd = socket(PF_INET,SOCK_STREAM,0);
@@ -68,11 +71,15 @@ int main(int argc,const char *argv[])
         if(cli_sockfd == -1)
             Debug("Error:accept()\n");
 
-        handleRequest((void *)&cli_sockfd);
+        ret = pthread_create(threads+(thread_count++),NULL,(void *)handleRequest,&cli_sockfd);
+        if(ret != 0)
+        {
+            Debug("Error:pthread_create\n");
+        }
     }
 
     /*close fd*/
     close(ser_sockfd);
 
-    return 0;
+    return EXIT_SUCCESS;
 }
