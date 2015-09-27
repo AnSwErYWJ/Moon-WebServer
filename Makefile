@@ -5,6 +5,6 @@ Moon: Moon.o function.o
 Moon.o: Moon.c function.h 
 	$(CC) -c Moon.c -lpthread
 function.o: function.c function.h
-	$(CC) -c function.c
+	$(CC) -c function.c -lpthread
 clean:
 	rm -f *.o 
