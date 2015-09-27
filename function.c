@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include "function.h"
 #include <string.h>
+#include <pthread.h>
 
 /*
  * safe to read and write
@@ -223,4 +224,6 @@ extern void handleRequest(void *client_sockfd)
 
     /*read file and send*/
     sendDate(client_sockfd,filename);
+
+    pthread_exit("Bye");
 }
