@@ -43,9 +43,9 @@ int main(int argc,const char *argv[])
     socklen_t cli_addr_size;
     int thread_count = 0;
     pthread_t threads[MAX_THREAD_NUM];
+    char ipaddress[20];
     FILE *fp_log;
     time_t t;   
-    char ipaddress[20];
 
     /*get server sockfd*/
     ser_sockfd = socket(PF_INET,SOCK_STREAM,0);
