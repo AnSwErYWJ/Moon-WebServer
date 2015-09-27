@@ -195,6 +195,7 @@ extern void catJPEG(void *client_sockfd,char *filename)
 extern void handleRequest(void *client_sockfd) 
 {
     char buf[MAXSIZE];
+    char *buf_backup;
     int c_sockfd = *((int *) client_sockfd);
     char method[10]; //请求方法
     char filename[20]; //请求文件名
