@@ -14,6 +14,7 @@
 #define PORT 8080 //apache default port
 
 #define MAXSIZE 1024 //BufSize
+#define MAX_THREAD_NUM 100
 
 int ret;
 
