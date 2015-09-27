@@ -174,6 +174,7 @@ extern void catJPEG(void *client_sockfd,char *filename)
     }
 
     /*open fp in fd*/
+    /*非文本文件最好都用二进制模式打开*/
     fw = fdopen(c_sockfd,"w");
     fread(buf,1,sizeof(buf),fp);
     while(!feof(fp))
