@@ -16,6 +16,7 @@
 #include "function.h"
 #include <string.h>
 #include <pthread.h>
+#include <time.h>
 
 /*
  * safe to read and write
@@ -73,6 +74,8 @@ extern ssize_t safe_write(int fd,const void *vptr,size_t n)
 extern void sendError(void *client_sockfd)
 {
     int c_sockfd = *((int *)client_sockfd);
+    time_t t_send;
+    FILE *fp_send;
 
     char status[] = "HTTP/1.0 400 Bad Request\r\n";
     char header[] = "Server: Moon Server\r\nContent-Type: text/html\r\n\r\n";
@@ -82,6 +85,20 @@ extern void sendError(void *client_sockfd)
     safe_write(c_sockfd,status,strlen(status));
     safe_write(c_sockfd,header,strlen(header));
     safe_write(c_sockfd,body,strlen(body));
+    
+    /*send log*/
+    fp_send = fopen("send.txt","a+");
+    if(fp_send == NULL)
+    {
+        Debug("Error:fopen()-send.txt\n");
+    }
+    time(&t_send);
+    fputs(ctime(&t_send),fp_send);
+    fwrite(status,1,strlen(status),fp_send);
+    fwrite(header,1,strlen(header),fp_send);
+    fwrite(body,1,strlen(body),fp_send);
+    fprintf(fp_send,"\n");
+    fclose(fp_send);
 }
 
 
@@ -91,6 +108,8 @@ extern void sendDate(void *client_sockfd,char *filename)
     int c_sockfd = *((int *)client_sockfd);
     char name[20];
     char ext[10];
+    time_t t_err;
+    FILE *fp_err;
 
     strcpy(name,filename);
 
@@ -111,7 +130,17 @@ extern void sendDate(void *client_sockfd,char *filename)
     }
     else
     {
-        Debug("Error:ext\n");
+        /*error log*/
+        fp_err = fopen("error.txt","a+");
+        if(fp_err == NULL)
+        {
+            Debug("Error:fopen()-error.txt\n");
+        }
+        time(&t_err);
+        fputs(ctime(&t_err),fp_err);
+        fprintf(fp_err,"ext is error\n");
+        fclose(fp_err);
+        
         sendError(client_sockfd);
         close(c_sockfd);
     }
@@ -122,6 +151,8 @@ extern void catHTML(void *client_sockfd,char *filename)
     char buf[MAXSIZE];
     int c_sockfd = *((int *)client_sockfd);
     FILE *fp;
+    time_t t_send;
+    FILE *fp_send;
 
     char status[] = "HTTP/1.0 200 OK\r\n";
     char header[] = "Server: Moon Server\r\nContent-Type: text/html\r\n\r\n";
@@ -130,6 +161,17 @@ extern void catHTML(void *client_sockfd,char *filename)
     safe_write(c_sockfd,status,strlen(status));
     safe_write(c_sockfd,header,strlen(header));
 
+    /*send log*/
+    fp_send = fopen("send.txt","a+");
+    if(fp_send == NULL)
+    {
+        Debug("Error:fopen()-send.txt\n");
+    }
+    time(&t_send);
+    fputs(ctime(&t_send),fp_send);
+    fwrite(status,1,strlen(status),fp_send);
+    fwrite(header,1,strlen(header),fp_send);
+    
     /*open file*/
     fp = fopen(filename,"r");
     if(fp == NULL)
@@ -144,9 +186,11 @@ extern void catHTML(void *client_sockfd,char *filename)
     while(!feof(fp))
     {
         safe_write(c_sockfd,buf,strlen(buf));
+        fwrite(buf,1,strlen(buf),fp_send);
         fgets(buf,sizeof(buf),fp);
     }
 
+    fclose(fp_send);
     fclose(fp);
     close(c_sockfd);
 }
@@ -157,6 +201,8 @@ extern void catJPEG(void *client_sockfd,char *filename)
     int c_sockfd = *((int *)client_sockfd);
     FILE *fp;
     FILE *fw;
+    time_t t_send;
+    FILE *fp_send;
 
     char status[] = "HTTP/1.0 200 OK\r\n";
     char header[] = "Server: Moon Server\r\nContent-Type: image/jpeg\r\n\r\n";
@@ -165,6 +211,17 @@ extern void catJPEG(void *client_sockfd,char *filename)
     safe_write(c_sockfd,status,strlen(status));
     safe_write(c_sockfd,header,strlen(header));
 
+    /*send log*/
+    fp_send = fopen("send.txt","a+");
+    if(fp_send == NULL)
+    {
+        Debug("Error:fopen()-send.txt\n");
+    }
+    time(&t_send);
+    fputs(ctime(&t_send),fp_send);
+    fwrite(status,1,strlen(status),fp_send);
+    fwrite(header,1,strlen(header),fp_send);
+    
     /*open jpeg in binary*/
     fp = fopen(filename,"rb");
     if(fp == NULL)
@@ -181,9 +238,11 @@ extern void catJPEG(void *client_sockfd,char *filename)
     while(!feof(fp))
     {
         fwrite(buf,1,sizeof(buf),fw);
+        fwrite(buf,1,strlen(buf),fp_send);
         fread(buf,1,sizeof(buf),fp);
     }
 
+    fclose(fp_send);
     fclose(fw);
     fclose(fp);
     close(c_sockfd);
@@ -199,10 +258,23 @@ extern void handleRequest(void *client_sockfd)
     int c_sockfd = *((int *) client_sockfd);
     char method[10]; //请求方法
     char filename[20]; //请求文件名
+    FILE *fp_req;
+    time_t t_req;
 
     /*read request*/
     read(c_sockfd,buf,sizeof(buf)-1);
-
+    
+    /*request log*/
+    fp_req = fopen("request.txt","a+");
+    if(fp_req == NULL)
+    {
+        Debug("Error:fopen()-request.txt");
+    }
+    time(&t_req);
+    fputs(ctime(&t_req),fp_req);
+    fwrite(buf,1,strlen(buf),fp_req);
+    fclose(fp_req);
+    
     /*check if http*/
     if(strstr(buf,"HTTP/") == NULL)
     {
@@ -225,6 +297,6 @@ extern void handleRequest(void *client_sockfd)
 
     /*read file and send*/
     sendDate(client_sockfd,filename);
-
+    
     pthread_exit("Bye");
 }
