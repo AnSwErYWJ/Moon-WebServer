@@ -19,10 +19,11 @@
 #include <pthread.h>
 #include <time.h>
 #include <sys/types.h>
+#include <signal.h>
 
 /*
-* listen()的包裹函数，可以自定义backlog
-*/
+ * listen()的包裹函数，可以自定义backlog
+ */
 static void Listen(int fd,int backlog)
 {
     char *ptr;
@@ -35,22 +36,31 @@ static void Listen(int fd,int backlog)
         Debug("Error:listen()\n");
 }
 
+/*退出函数*/
+void quit(int signo)
+{
+    exit(EXIT_SUCCESS);
+}
+
 int main(int argc,const char *argv[])
 {
+    struct sockaddr_in ser_addr,cli_addr;
     char buf[MAXSIZE];
     int ser_sockfd,cli_sockfd;
-    struct sockaddr_in ser_addr,cli_addr;
     socklen_t cli_addr_size;
     int thread_count = 0;
     pthread_t threads[MAX_THREAD_NUM];
     char ipaddress[20];
     FILE *fp_log;
-    time_t t;   
+    time_t t_log;   
 
     /*get server sockfd*/
     ser_sockfd = socket(PF_INET,SOCK_STREAM,0);
     if(ser_sockfd == -1)
         Debug("Error:socket()\n");
+
+    /*quit signal*/
+    signal(SIGINT,quit);
 
     /*configure ser_addr*/
     bzero(&ser_addr,sizeof(ser_addr));
@@ -78,18 +88,18 @@ int main(int argc,const char *argv[])
             Debug("Error:accept()\n");
         }
         
-        /*log*/
-        time(&t);
-        
+        /*client log*/
         fp_log = fopen("cli_log.txt","a+");
         if(fp_log == NULL)
         {
             Debug("Error:fopen()\n");
         }
         
-        fputs(ctime(&t),fp_log);
+        time(&t_log);
+        fputs(ctime(&t_log),fp_log);
         inet_ntop(AF_INET,(void *)&cli_addr.sin_addr,ipaddress,16);
         fprintf(fp_log,"ipaddress:%s port:%d\n",ipaddress,cli_addr.sin_port);
+        fclose(fp_log);
        
         /*多线程*/
         ret = pthread_create(threads+(thread_count++),NULL,(void *)handleRequest,&cli_sockfd);
@@ -97,7 +107,6 @@ int main(int argc,const char *argv[])
         {
             Debug("Error:pthread_create\n");
         }
-        fclose(fp_log);
     }
 
     /*close fd*/
