@@ -268,7 +268,7 @@ void catPHP(void *client_sockfd, char *filename, char *query)
     struct sockaddr_in serv_addr;
     int str_len;
     int contentLengthR;
-    char msg[50];
+    char msg[100];
     char buf[MAXSIZE];
     char status[] = "HTTP/1.0 200 OK\r\n";
     char header[] = "Server: Moon Server\r\n";
@@ -316,7 +316,7 @@ void catPHP(void *client_sockfd, char *filename, char *query)
     fwrite(&beginRecord,1,sizeof(beginRecord),fp_send);
     
     // 传递FCGI_PARAMS参数
-    strcpy(msg, "/home/answer/Moon-WebServer/");
+    strcpy(msg, "/home/answer/Moon-WebServer/www/");
     strcat(msg, filename);
     char *params[][2] = {
         {"SCRIPT_FILENAME", msg}, 
@@ -349,6 +349,7 @@ void catPHP(void *client_sockfd, char *filename, char *query)
     FCGI_Header stdinHeader;
     stdinHeader = makeHeader(FCGI_STDIN, FCGI_REQUEST_ID, 0, 0);
     safe_write(sock, &stdinHeader, sizeof(stdinHeader));
+    
     fwrite(&stdinHeader,1,sizeof(stdinHeader),fp_send);
     
     // 读取解析FASTCGI应用响应的数据
@@ -358,8 +359,9 @@ void catPHP(void *client_sockfd, char *filename, char *query)
 	if(-1 == str_len){
         Debug("Error:read responder failed!\n");
 	}
-    
-    if(respHeader.type == FCGI_STDOUT){
+
+    if(respHeader.type == FCGI_STDOUT)
+    {
         contentLengthR = ((int)respHeader.contentLengthB1 << 8) + (int)respHeader.contentLengthB0;
         message = (char *)malloc(contentLengthR);
         read(sock, message, contentLengthR);
@@ -372,7 +374,6 @@ void catPHP(void *client_sockfd, char *filename, char *query)
     fwrite(header,1,strlen(header),fp_send);
     fwrite(message,1,contentLengthR,fp_send);
 
-printf("123\n");
     fclose(fp_send);
     free(message);
     close(c_sockfd);
