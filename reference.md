@@ -1,101 +1,102 @@
-# ²Î¿¼×ÊÁÏ
-## WEB ·þÎñÆ÷Ö´ÐÐµÄÈÎÎñ
-Ò»°ãµÄÉÌÓÃ WEB ·þÎñÆ÷¶¼ÒªÖ´ÐÐÏÂÃæÕâÐ©ÈÎÎñ£º
+# å‚è€ƒèµ„æ–™
 
-1. ½¨Á¢Á¬½Ó¡ª¡ª½ÓÊÜÒ»¸ö¿Í»§¶ËÁ¬½Ó¡£
-2. ½ÓÊÕÇëÇó¡ª¡ª´ÓÍøÂçÖÐ¶ÁÈ¡Ò»Ìõ HTTP ÇëÇó±¨ÎÄ¡£ 
-3. ´¦ÀíÇëÇó¡ª¡ª¶ÔÇëÇó±¨ÎÄ½øÐÐ½âÊÍ£¬²¢²ÉÈ¡ÐÐ¶¯¡£ 
-4. ·ÃÎÊ×ÊÔ´¡ª¡ª·ÃÎÊ±¨ÎÄÖÐÖ¸¶¨µÄ×ÊÔ´¡£
-5. ¹¹½¨ÏìÓ¦¡ª¡ª´´½¨´øÓÐÕýÈ·Ê×²¿µÄ HTTP ÏìÓ¦±¨ÎÄ¡£ 
-6. ·¢ËÍÏìÓ¦¡ª¡ª½«ÏìÓ¦»ØËÍ¸ø¿Í»§¶Ë¡£ 
-7. ¼ÇÂ¼ÊÂÎñ´¦Àí¹ý³Ì¡ª¡ª½«ÓëÒÑÍê³ÉÊÂÎñÓÐ¹ØµÄÄÚÈÝ¼ÇÂ¼ÔÚÒ»¸öÈÕÖ¾ÎÄ¼þÖÐ¡£
+## WEB æœåŠ¡å™¨æ‰§è¡Œçš„ä»»åŠ¡
+ä¸€èˆ¬çš„å•†ç”¨ WEB æœåŠ¡å™¨éƒ½è¦æ‰§è¡Œä¸‹é¢è¿™äº›ä»»åŠ¡ï¼š
 
-### ½ÓÊÕÇëÇó
-Ò»¸ö HTTP ÇëÇó±¨ÎÄÓÉÇëÇóÐÐ£¨request line£©¡¢ÇëÇóÍ·²¿£¨header£©¡¢¿ÕÐÐºÍÇëÇóÊý¾Ý 4 ¸ö²¿·Ö×é³É¡£ÀýÈçµ±ÎÒÃÇÔÚä¯ÀÀÆ÷ÖÐ·ÃÎÊ£º127.0.0.1/index.html Ê±£¬ä¯ÀÀÆ÷·¢ËÍ¸ø WEB ·þÎñÆ÷µÄÇëÇó±¨ÎÄ´óÖÂÈçÏÂ£º
+1. å»ºç«‹è¿žæŽ¥â€”â€”æŽ¥å—ä¸€ä¸ªå®¢æˆ·ç«¯è¿žæŽ¥ã€‚
+2. æŽ¥æ”¶è¯·æ±‚â€”â€”ä»Žç½‘ç»œä¸­è¯»å–ä¸€æ¡ HTTP è¯·æ±‚æŠ¥æ–‡ã€‚ 
+3. å¤„ç†è¯·æ±‚â€”â€”å¯¹è¯·æ±‚æŠ¥æ–‡è¿›è¡Œè§£é‡Šï¼Œå¹¶é‡‡å–è¡ŒåŠ¨ã€‚ 
+4. è®¿é—®èµ„æºâ€”â€”è®¿é—®æŠ¥æ–‡ä¸­æŒ‡å®šçš„èµ„æºã€‚
+5. æž„å»ºå“åº”â€”â€”åˆ›å»ºå¸¦æœ‰æ­£ç¡®é¦–éƒ¨çš„ HTTP å“åº”æŠ¥æ–‡ã€‚ 
+6. å‘é€å“åº”â€”â€”å°†å“åº”å›žé€ç»™å®¢æˆ·ç«¯ã€‚ 
+7. è®°å½•äº‹åŠ¡å¤„ç†è¿‡ç¨‹â€”â€”å°†ä¸Žå·²å®Œæˆäº‹åŠ¡æœ‰å…³çš„å†…å®¹è®°å½•åœ¨ä¸€ä¸ªæ—¥å¿—æ–‡ä»¶ä¸­ã€‚
+
+### æŽ¥æ”¶è¯·æ±‚
+ä¸€ä¸ª HTTP è¯·æ±‚æŠ¥æ–‡ç”±è¯·æ±‚è¡Œï¼ˆrequest lineï¼‰ã€è¯·æ±‚å¤´éƒ¨ï¼ˆheaderï¼‰ã€ç©ºè¡Œå’Œè¯·æ±‚æ•°æ® 4 ä¸ªéƒ¨åˆ†ç»„æˆã€‚ä¾‹å¦‚å½“æˆ‘ä»¬åœ¨æµè§ˆå™¨ä¸­è®¿é—®ï¼š127.0.0.1/index.html æ—¶ï¼Œæµè§ˆå™¨å‘é€ç»™ WEB æœåŠ¡å™¨çš„è¯·æ±‚æŠ¥æ–‡å¤§è‡´å¦‚ä¸‹ï¼š
 ```
-/*ÇëÇóÐÐ*/
+/*è¯·æ±‚è¡Œ*/
 GET  /index.html  HTTP/1.1  
 
-/*ÇëÇóÍ·²¿*/
+/*è¯·æ±‚å¤´éƒ¨*/
 User-Agent: Mozilla/5.0
 
 /*
- * µäÐÍµÄÇëÇóÍ·£º
- * User-Agent£º²úÉúÇëÇóµÄä¯ÀÀÆ÷ÀàÐÍ¡£ 
- * Accept£º¿Í»§¶Ë¿ÉÊ¶±ðµÄÄÚÈÝÀàÐÍÁÐ±í¡£ 
- * Host£ºÇëÇóµÄÖ÷»úÃû£¬ÔÊÐí¶à¸öÓòÃûÍ¬´¦Ò»¸ö IP µØÖ·£¬¼´ÐéÄâÖ÷»ú¡£
+ * å…¸åž‹çš„è¯·æ±‚å¤´ï¼š
+ * User-Agentï¼šäº§ç”Ÿè¯·æ±‚çš„æµè§ˆå™¨ç±»åž‹ã€‚ 
+ * Acceptï¼šå®¢æˆ·ç«¯å¯è¯†åˆ«çš„å†…å®¹ç±»åž‹åˆ—è¡¨ã€‚ 
+ * Hostï¼šè¯·æ±‚çš„ä¸»æœºåï¼Œå…è®¸å¤šä¸ªåŸŸååŒå¤„ä¸€ä¸ª IP åœ°å€ï¼Œå³è™šæ‹Ÿä¸»æœºã€‚
  */
 ```
-1. ÇëÇóÐÐÓÉÇëÇó·½·¨×Ö¶Î¡¢URL ×Ö¶ÎºÍ HTTP Ð­Òé°æ±¾×Ö¶Î 3 ¸ö×Ö¶Î×é³É£¬ËüÃÇÓÃ¿Õ¸ñ·Ö¸ô¡£HTTP Ð­ÒéµÄÇëÇó·½·¨ÓÐ GET¡¢POST¡¢HEAD¡¢PUT¡¢DELETE¡¢OPTIONS¡¢TRACE¡¢CONNECT¡£
-2. ÇëÇóÍ·²¿ÓÉ ¹Ø¼ü×Ö/Öµ¶Ô ×é³É£¬Ã¿ÐÐÒ»¶Ô£¬¹Ø¼ü×ÖºÍÖµÓÃÓ¢ÎÄÃ°ºÅ ¡°:¡± ·Ö¸ô¡£ÇëÇóÍ·²¿Í¨Öª·þÎñÆ÷ÓÐ¹ØÓÚ¿Í»§¶ËÇëÇóµÄÐÅÏ¢¡£
-3. ×îºóÒ»¸öÇëÇóÍ·Ö®ºóÊÇÒ»¸ö¿ÕÐÐ£¬·¢ËÍ»Ø³µ·ûºÍ»»ÐÐ·û£¬Í¨Öª·þÎñÆ÷ÒÔÏÂ²»ÔÙÓÐÇëÇóÍ·¡£
-4. ÇëÇóÊý¾Ý²»ÔÚGET ·½·¨ÖÐÊ¹ÓÃ£¬¶øÊÇÔÚ POST ·½·¨ÖÐÊ¹ÓÃ¡£POST ·½·¨ÊÊÓÃÓÚÐèÒª¿Í»§ÌîÐ´±íµ¥µÄ³¡ºÏ¡£
+1. è¯·æ±‚è¡Œç”±è¯·æ±‚æ–¹æ³•å­—æ®µã€URL å­—æ®µå’Œ HTTP åè®®ç‰ˆæœ¬å­—æ®µ 3 ä¸ªå­—æ®µç»„æˆï¼Œå®ƒä»¬ç”¨ç©ºæ ¼åˆ†éš”ã€‚HTTP åè®®çš„è¯·æ±‚æ–¹æ³•æœ‰ GETã€POSTã€HEADã€PUTã€DELETEã€OPTIONSã€TRACEã€CONNECTã€‚
+2. è¯·æ±‚å¤´éƒ¨ç”± å…³é”®å­—/å€¼å¯¹ ç»„æˆï¼Œæ¯è¡Œä¸€å¯¹ï¼Œå…³é”®å­—å’Œå€¼ç”¨è‹±æ–‡å†’å· â€œ:â€ åˆ†éš”ã€‚è¯·æ±‚å¤´éƒ¨é€šçŸ¥æœåŠ¡å™¨æœ‰å…³äºŽå®¢æˆ·ç«¯è¯·æ±‚çš„ä¿¡æ¯ã€‚
+3. æœ€åŽä¸€ä¸ªè¯·æ±‚å¤´ä¹‹åŽæ˜¯ä¸€ä¸ªç©ºè¡Œï¼Œå‘é€å›žè½¦ç¬¦å’Œæ¢è¡Œç¬¦ï¼Œé€šçŸ¥æœåŠ¡å™¨ä»¥ä¸‹ä¸å†æœ‰è¯·æ±‚å¤´ã€‚
+4. è¯·æ±‚æ•°æ®ä¸åœ¨GET æ–¹æ³•ä¸­ä½¿ç”¨ï¼Œè€Œæ˜¯åœ¨ POST æ–¹æ³•ä¸­ä½¿ç”¨ã€‚POST æ–¹æ³•é€‚ç”¨äºŽéœ€è¦å®¢æˆ·å¡«å†™è¡¨å•çš„åœºåˆã€‚
 
-###´¦ÀíÇëÇó
-´¦ÀíÇëÇó£¬Ò»µ© Web ·þÎñÆ÷ÊÕµ½ÁËÇëÇó£¬¾Í¿ÉÒÔ¸ù¾Ý·½·¨¡¢×ÊÔ´¡¢Ê×²¿ºÍ¿ÉÑ¡µÄÖ÷Ìå²¿·ÖÀ´¶ÔÇëÇó½øÐÐ´¦ÀíÁË¡£
-±¾ÏîÄ¿ÖÐ´¦ÀíÇëÇóµÄÁ÷³ÌÊÇ£¬Ê×ÏÈ¼ì²éÇëÇóÐ­ÒéÊÇ·ñÊÇ HTTP Ð­Òé£¬È»ºó£¬¼ì²éÇëÇóÊÇ·ñÊÇ GET ÇëÇó£¬×îºó£¬ÌáÈ¡ä¯ÀÀÆ÷ÇëÇóµÄÎÄ¼þÃû¡£
+###å¤„ç†è¯·æ±‚
+å¤„ç†è¯·æ±‚ï¼Œä¸€æ—¦ Web æœåŠ¡å™¨æ”¶åˆ°äº†è¯·æ±‚ï¼Œå°±å¯ä»¥æ ¹æ®æ–¹æ³•ã€èµ„æºã€é¦–éƒ¨å’Œå¯é€‰çš„ä¸»ä½“éƒ¨åˆ†æ¥å¯¹è¯·æ±‚è¿›è¡Œå¤„ç†äº†ã€‚
+æœ¬é¡¹ç›®ä¸­å¤„ç†è¯·æ±‚çš„æµç¨‹æ˜¯ï¼Œé¦–å…ˆæ£€æŸ¥è¯·æ±‚åè®®æ˜¯å¦æ˜¯ HTTP åè®®ï¼Œç„¶åŽï¼Œæ£€æŸ¥è¯·æ±‚æ˜¯å¦æ˜¯ GET è¯·æ±‚ï¼Œæœ€åŽï¼Œæå–æµè§ˆå™¨è¯·æ±‚çš„æ–‡ä»¶åã€‚
 
-###·ÃÎÊ×ÊÔ´
-·ÃÎÊ×ÊÔ´£¬¸ù¾Ýä¯ÀÀÆ÷ÇëÇóµÄÎÄ¼þÃû¶ÁÈ¡ÎÄ¼þÄÚÈÝ£¬²¢½«ÄÚÈÝ·¢ËÍ¸øä¯ÀÀÆ÷¡£±¾ÏîÄ¿ÊµÏÖÁË¶ÁÈ¡¾²Ì¬ html¡¢jpg ºÍ php ÎÄ¼þ¡£
+###è®¿é—®èµ„æº
+è®¿é—®èµ„æºï¼Œæ ¹æ®æµè§ˆå™¨è¯·æ±‚çš„æ–‡ä»¶åè¯»å–æ–‡ä»¶å†…å®¹ï¼Œå¹¶å°†å†…å®¹å‘é€ç»™æµè§ˆå™¨ã€‚æœ¬é¡¹ç›®å®žçŽ°äº†è¯»å–é™æ€ htmlã€jpg å’Œ php æ–‡ä»¶ã€‚
 
-###¹¹½¨ÏìÓ¦
-¹¹½¨ÏìÓ¦¾ÍÊÇ¹¹½¨Ò»¸öÏìÓ¦±¨ÎÄ·¢ËÍ¸øä¯ÀÀÆ÷¡£
-HTTP ÏìÓ¦±¨ÎÄÖ÷ÒªÓÉ×´Ì¬ÐÐ¡¢ÏìÓ¦Í·²¿¡¢¿ÕÐÐÒÔ¼°ÏìÓ¦ÕýÎÄ 4 ²¿·Ö×é³É¡£
-×´Ì¬ÐÐÓÉ 3 ²¿·Ö×é³É£¬·Ö±ðÎª£ºHTTP Ð­Òé°æ±¾£¬×´Ì¬´úÂë£¬×´Ì¬´úÂëÃèÊö¡£
+###æž„å»ºå“åº”
+æž„å»ºå“åº”å°±æ˜¯æž„å»ºä¸€ä¸ªå“åº”æŠ¥æ–‡å‘é€ç»™æµè§ˆå™¨ã€‚
+HTTP å“åº”æŠ¥æ–‡ä¸»è¦ç”±çŠ¶æ€è¡Œã€å“åº”å¤´éƒ¨ã€ç©ºè¡Œä»¥åŠå“åº”æ­£æ–‡ 4 éƒ¨åˆ†ç»„æˆã€‚
+çŠ¶æ€è¡Œç”± 3 éƒ¨åˆ†ç»„æˆï¼Œåˆ†åˆ«ä¸ºï¼šHTTP åè®®ç‰ˆæœ¬ï¼ŒçŠ¶æ€ä»£ç ï¼ŒçŠ¶æ€ä»£ç æè¿°ã€‚
 ```
 char status[] = "HTTP/1.0 200 OK\r\n";
 ```
-×´Ì¬´úÂëÎª 3 Î»Êý×Ö£¬ÓÉ 1¡¢2¡¢3¡¢4 ÒÔ¼° 5 ¿ªÍ·£¬2 ¿ªÍ·µÄÖ¸ÏìÓ¦³É¹¦£¬3 ¿ªÍ·µÄÖ¸ÖØ¶¨Ïò£¬4 ¿ªÍ·µÄÖ¸¿Í»§¶Ë´íÎó£¬5 ¿ªÍ·µÄÖ¸·þÎñ¶Ë´íÎó¡£ÏêÏ¸µÄ×´Ì¬Âë¾Í²»½éÉÜÁË£¬ÕâÀïÁÐ¾Ù¼¸¸ö³£¼ûµÄ£º
-1. 200£ºÏìÓ¦³É¹¦
-2. 400£º´íÎóµÄÇëÇó£¬ÓÃ»§·¢ËÍµÄHTTPÇëÇó²»ÕýÈ· 
-3. 404£ºÎÄ¼þ²»´æÔÚ£¬Ò²¾ÍÊÇHTTPÇëÇóURI´íÎó 
-4. 500£º·þÎñÆ÷ÄÚ²¿´íÎó
+çŠ¶æ€ä»£ç ä¸º 3 ä½æ•°å­—ï¼Œç”± 1ã€2ã€3ã€4 ä»¥åŠ 5 å¼€å¤´ï¼Œ2 å¼€å¤´çš„æŒ‡å“åº”æˆåŠŸï¼Œ3 å¼€å¤´çš„æŒ‡é‡å®šå‘ï¼Œ4 å¼€å¤´çš„æŒ‡å®¢æˆ·ç«¯é”™è¯¯ï¼Œ5 å¼€å¤´çš„æŒ‡æœåŠ¡ç«¯é”™è¯¯ã€‚è¯¦ç»†çš„çŠ¶æ€ç å°±ä¸ä»‹ç»äº†ï¼Œè¿™é‡Œåˆ—ä¸¾å‡ ä¸ªå¸¸è§çš„ï¼š
+1. 200ï¼šå“åº”æˆåŠŸ
+2. 400ï¼šé”™è¯¯çš„è¯·æ±‚ï¼Œç”¨æˆ·å‘é€çš„HTTPè¯·æ±‚ä¸æ­£ç¡® 
+3. 404ï¼šæ–‡ä»¶ä¸å­˜åœ¨ï¼Œä¹Ÿå°±æ˜¯HTTPè¯·æ±‚URIé”™è¯¯ 
+4. 500ï¼šæœåŠ¡å™¨å†…éƒ¨é”™è¯¯
 
-ÏìÓ¦Í·²¿ÓëÇëÇóÍ·²¿ÀàËÆ£¬Ò²°üº¬ÁËºÜ¶àÓÐÓÃµÄÐÅÏ¢¡£ÈçÏìÓ¦ÄÚÈÝµÄÀàÐÍ£¬Í¼Æ¬ÀàÐÍÎª£º Content-Type:image/jpeg¡£
+å“åº”å¤´éƒ¨ä¸Žè¯·æ±‚å¤´éƒ¨ç±»ä¼¼ï¼Œä¹ŸåŒ…å«äº†å¾ˆå¤šæœ‰ç”¨çš„ä¿¡æ¯ã€‚å¦‚å“åº”å†…å®¹çš„ç±»åž‹ï¼Œå›¾ç‰‡ç±»åž‹ä¸ºï¼š Content-Type:image/jpegã€‚
 ```
 char header[] = "Server: A Simple Web Server\r\nContent-Type: image/jpeg\r\n\r\n";
 ```
 
-##WEB ·þÎñÆ÷µÄ¼¸ÖÖÄ£ÐÍ
-¸ßÐÔÄÜµÄ WEB ·þÎñÆ÷ÄÜ¹»Í¬Ê±Ö§³ÖÊýÇ§ÌõÁ¬½Ó¡£ÕâÐ©Á¬½ÓÊ¹µÃ·þÎñÆ÷¿ÉÒÔÓëÊÀ½ç¸÷µØµÄ¿Í»§¶Ë½øÐÐÍ¨ÐÅ£¬Ã¿¸ö¿Í»§¶Ë¶¼Ïò·þÎñÆ÷´ò¿ªÁËÒ»Ìõ»ò¶àÌõÁ¬½Ó¡£ÒòÎªÇëÇó¿ÉÄÜ»áÔÚÈÎÒâÊ±¿Ìµ½´ï£¬ËùÒÔ WEB ·þÎñÆ÷»á²»Í£µØ¹Û²ìÓÐÎÞÐÂµÄ WEB ÇëÇó¡£²»Í¬µÄ WEB ·þÎñÆ÷Ä£ÐÍ»áÒÔ²»Í¬µÄ·½Ê½ÎªÇëÇó·þÎñ¡£
-###µ¥Ïß³Ì WEB ·þÎñÆ÷
-µ¥Ïß³ÌµÄ WEB ·þÎñÆ÷Ò»´ÎÖ»´¦ÀíÒ»¸öÇëÇó£¬Ö±µ½ÆäÍê³ÉÎªÖ¹¡£Ò»¸öÊÂÎñ´¦Àí½áÊøÖ®ºó£¬²ÅÈ¥´¦ÀíÏÂÒ»ÌõÁ¬½Ó¡£ÕâÖÖ½á¹¹Ò×ÓÚÊµÏÖ£¬µ«ÔÚ´¦Àí¹ý³ÌÖÐ£¬ËùÓÐÆäËûÁ¬½Ó¶¼»á±»ºöÂÔ¡£ÕâÑù»áÔì³ÉÑÏÖØµÄÐÔÄÜÎÊÌâ£¬Ö»ÊÊÓÃÓÚµÍ¸ººÉµÄ·þÎñÆ÷¡£
-###¶à½ø³Ì¼°¶àÏß³Ì WEB ·þÎñÆ÷
-¶à½ø³ÌºÍ¶àÏß³Ì WEB ·þÎñÆ÷ÓÃ¶à¸ö½ø³Ì£¬ »ò¸ü¸ßÐ§µÄÏß³ÌÍ¬Ê±¶ÔÇëÇó½øÐÐ´¦Àí¡£ ¿ÉÒÔ¸ù¾ÝÐèÒª´´½¨£¬»òÕßÔ¤ÏÈ´´½¨Ò»Ð©Ïß³Ì / ½ø³Ì¡£ ÓÐÐ©·þÎñÆ÷»áÎªÃ¿ÌõÁ¬½Ó·ÖÅäÒ»¸öÏß³Ì / ½ø³Ì£¬µ«µ±·þÎñÆ÷Í¬Ê±Òª´¦Àí³É°Ù¡¢ÉÏÇ§£¬ÉõÖÁÊýÒÔÍò¼ÆµÄÁ¬½ÓÊ±£¬ÐèÒªµÄ½ø³Ì»òÏß³ÌÊýÁ¿¿ÉÄÜ»áÏûºÄÌ«¶àµÄÄÚ´æ»òÏµÍ³×ÊÔ´¡£Òò´Ë£¬ºÜ¶à¶àÏß³Ì WEB ·þÎñÆ÷¶¼»á¶ÔÏß³Ì / ½ø³ÌµÄ×î´óÊýÁ¿½øÐÐÏÞÖÆ¡£
-###¸´ÓÃ I/O µÄ·þÎñÆ÷
-ÎªÁËÖ§³Ö´óÁ¿µÄÁ¬½Ó£¬ºÜ¶à WEB ·þÎñÆ÷¶¼²ÉÓÃÁË¸´ÓÃ½á¹¹¡£ÔÚ¸´ÓÃ½á¹¹ÖÐ£¬ÒªÍ¬Ê±¼àÊÓËùÓÐÁ¬½ÓÉÏµÄ»î¶¯¡£µ±Á¬½ÓµÄ×´Ì¬·¢Éú±ä»¯Ê±£¨±ÈÈç£¬ÓÐÊý¾Ý¿ÉÓÃ£¬»ò³öÏÖ´íÎóÊ±£© £¬¾Í¶ÔÄÇÌõÁ¬½Ó½øÐÐÉÙÁ¿µÄ´¦Àí£»´¦Àí½áÊøÖ®ºó£¬½«Á¬½Ó·µ»Øµ½¿ª·ÅÁ¬½ÓÁÐ±íÖÐ£¬µÈ´ýÏÂÒ»´Î×´Ì¬±ä»¯¡£Ö»ÓÐÔÚÓÐÊÂÇé¿É×öÊ±²Å»á¶ÔÁ¬½Ó½øÐÐ´¦Àí£»ÔÚ¿ÕÏÐÁ¬½ÓÉÏµÈ´ýµÄÊ±ºò²¢²»»á°ó¶¨Ïß³ÌºÍ½ø³Ì
-###¸´ÓÃµÄ¶àÏß³Ì WEB ·þÎñÆ÷
-ÓÐÐ©ÏµÍ³»á½«¶àÏß³ÌºÍ¸´ÓÃ¹¦ÄÜ½áºÏÔÚÒ»Æð£¬ÒÔÀûÓÃ¼ÆËã»úÆ½Ì¨ÉÏµÄ¶à¸ö CPU¡£¶à¸öÏß³Ì£¨Í¨³£ÊÇÒ»¸öÎïÀí´¦ÀíÆ÷£©ÖÐµÄÃ¿Ò»¸ö¶¼ÔÚ¹Û²ì´ò¿ªµÄÁ¬½Ó£¨»ò´ò¿ªµÄÁ¬½ÓÖÐµÄÒ»¸ö×Ó¼¯£© £¬²¢¶ÔÃ¿ÌõÁ¬½ÓÖ´ÐÐÉÙÁ¿µÄÈÎÎñ¡£
+##WEB æœåŠ¡å™¨çš„å‡ ç§æ¨¡åž‹
+é«˜æ€§èƒ½çš„ WEB æœåŠ¡å™¨èƒ½å¤ŸåŒæ—¶æ”¯æŒæ•°åƒæ¡è¿žæŽ¥ã€‚è¿™äº›è¿žæŽ¥ä½¿å¾—æœåŠ¡å™¨å¯ä»¥ä¸Žä¸–ç•Œå„åœ°çš„å®¢æˆ·ç«¯è¿›è¡Œé€šä¿¡ï¼Œæ¯ä¸ªå®¢æˆ·ç«¯éƒ½å‘æœåŠ¡å™¨æ‰“å¼€äº†ä¸€æ¡æˆ–å¤šæ¡è¿žæŽ¥ã€‚å› ä¸ºè¯·æ±‚å¯èƒ½ä¼šåœ¨ä»»æ„æ—¶åˆ»åˆ°è¾¾ï¼Œæ‰€ä»¥ WEB æœåŠ¡å™¨ä¼šä¸åœåœ°è§‚å¯Ÿæœ‰æ— æ–°çš„ WEB è¯·æ±‚ã€‚ä¸åŒçš„ WEB æœåŠ¡å™¨æ¨¡åž‹ä¼šä»¥ä¸åŒçš„æ–¹å¼ä¸ºè¯·æ±‚æœåŠ¡ã€‚
+###å•çº¿ç¨‹ WEB æœåŠ¡å™¨
+å•çº¿ç¨‹çš„ WEB æœåŠ¡å™¨ä¸€æ¬¡åªå¤„ç†ä¸€ä¸ªè¯·æ±‚ï¼Œç›´åˆ°å…¶å®Œæˆä¸ºæ­¢ã€‚ä¸€ä¸ªäº‹åŠ¡å¤„ç†ç»“æŸä¹‹åŽï¼Œæ‰åŽ»å¤„ç†ä¸‹ä¸€æ¡è¿žæŽ¥ã€‚è¿™ç§ç»“æž„æ˜“äºŽå®žçŽ°ï¼Œä½†åœ¨å¤„ç†è¿‡ç¨‹ä¸­ï¼Œæ‰€æœ‰å…¶ä»–è¿žæŽ¥éƒ½ä¼šè¢«å¿½ç•¥ã€‚è¿™æ ·ä¼šé€ æˆä¸¥é‡çš„æ€§èƒ½é—®é¢˜ï¼Œåªé€‚ç”¨äºŽä½Žè´Ÿè·çš„æœåŠ¡å™¨ã€‚
+###å¤šè¿›ç¨‹åŠå¤šçº¿ç¨‹ WEB æœåŠ¡å™¨
+å¤šè¿›ç¨‹å’Œå¤šçº¿ç¨‹ WEB æœåŠ¡å™¨ç”¨å¤šä¸ªè¿›ç¨‹ï¼Œ æˆ–æ›´é«˜æ•ˆçš„çº¿ç¨‹åŒæ—¶å¯¹è¯·æ±‚è¿›è¡Œå¤„ç†ã€‚ å¯ä»¥æ ¹æ®éœ€è¦åˆ›å»ºï¼Œæˆ–è€…é¢„å…ˆåˆ›å»ºä¸€äº›çº¿ç¨‹ / è¿›ç¨‹ã€‚ æœ‰äº›æœåŠ¡å™¨ä¼šä¸ºæ¯æ¡è¿žæŽ¥åˆ†é…ä¸€ä¸ªçº¿ç¨‹ / è¿›ç¨‹ï¼Œä½†å½“æœåŠ¡å™¨åŒæ—¶è¦å¤„ç†æˆç™¾ã€ä¸Šåƒï¼Œç”šè‡³æ•°ä»¥ä¸‡è®¡çš„è¿žæŽ¥æ—¶ï¼Œéœ€è¦çš„è¿›ç¨‹æˆ–çº¿ç¨‹æ•°é‡å¯èƒ½ä¼šæ¶ˆè€—å¤ªå¤šçš„å†…å­˜æˆ–ç³»ç»Ÿèµ„æºã€‚å› æ­¤ï¼Œå¾ˆå¤šå¤šçº¿ç¨‹ WEB æœåŠ¡å™¨éƒ½ä¼šå¯¹çº¿ç¨‹ / è¿›ç¨‹çš„æœ€å¤§æ•°é‡è¿›è¡Œé™åˆ¶ã€‚
+###å¤ç”¨ I/O çš„æœåŠ¡å™¨
+ä¸ºäº†æ”¯æŒå¤§é‡çš„è¿žæŽ¥ï¼Œå¾ˆå¤š WEB æœåŠ¡å™¨éƒ½é‡‡ç”¨äº†å¤ç”¨ç»“æž„ã€‚åœ¨å¤ç”¨ç»“æž„ä¸­ï¼Œè¦åŒæ—¶ç›‘è§†æ‰€æœ‰è¿žæŽ¥ä¸Šçš„æ´»åŠ¨ã€‚å½“è¿žæŽ¥çš„çŠ¶æ€å‘ç”Ÿå˜åŒ–æ—¶ï¼ˆæ¯”å¦‚ï¼Œæœ‰æ•°æ®å¯ç”¨ï¼Œæˆ–å‡ºçŽ°é”™è¯¯æ—¶ï¼‰ ï¼Œå°±å¯¹é‚£æ¡è¿žæŽ¥è¿›è¡Œå°‘é‡çš„å¤„ç†ï¼›å¤„ç†ç»“æŸä¹‹åŽï¼Œå°†è¿žæŽ¥è¿”å›žåˆ°å¼€æ”¾è¿žæŽ¥åˆ—è¡¨ä¸­ï¼Œç­‰å¾…ä¸‹ä¸€æ¬¡çŠ¶æ€å˜åŒ–ã€‚åªæœ‰åœ¨æœ‰äº‹æƒ…å¯åšæ—¶æ‰ä¼šå¯¹è¿žæŽ¥è¿›è¡Œå¤„ç†ï¼›åœ¨ç©ºé—²è¿žæŽ¥ä¸Šç­‰å¾…çš„æ—¶å€™å¹¶ä¸ä¼šç»‘å®šçº¿ç¨‹å’Œè¿›ç¨‹
+###å¤ç”¨çš„å¤šçº¿ç¨‹ WEB æœåŠ¡å™¨
+æœ‰äº›ç³»ç»Ÿä¼šå°†å¤šçº¿ç¨‹å’Œå¤ç”¨åŠŸèƒ½ç»“åˆåœ¨ä¸€èµ·ï¼Œä»¥åˆ©ç”¨è®¡ç®—æœºå¹³å°ä¸Šçš„å¤šä¸ª CPUã€‚å¤šä¸ªçº¿ç¨‹ï¼ˆé€šå¸¸æ˜¯ä¸€ä¸ªç‰©ç†å¤„ç†å™¨ï¼‰ä¸­çš„æ¯ä¸€ä¸ªéƒ½åœ¨è§‚å¯Ÿæ‰“å¼€çš„è¿žæŽ¥ï¼ˆæˆ–æ‰“å¼€çš„è¿žæŽ¥ä¸­çš„ä¸€ä¸ªå­é›†ï¼‰ ï¼Œå¹¶å¯¹æ¯æ¡è¿žæŽ¥æ‰§è¡Œå°‘é‡çš„ä»»åŠ¡ã€‚
 
-##PHP Ö§³Ö
-Ä¿Ç° WEB ·þÎñÆ÷¿ÉÒÔ´¦Àí html ÎÄ¼þºÍ jpg Í¼Æ¬ÁË¡£ÏÂÃæ¿¼ÂÇÔõÑùÖ§³Ö½âÎö php ÎÄ¼þ£¬ÒÔÇ°ÒªÖ´ÐÐ¶¯Ì¬³ÌÐò¶¼ÊÇÍ¨¹ý CGI ½Ó¿ÚÀ´Íê³ÉµÄ¡£CGI È«³ÆÊÇ ¡°Í¨ÓÃÍø¹Ø½Ó¿Ú¡±(Common Gateway Interface)£¬ Ëü¿ÉÒÔÈÃÒ»¸ö¿Í»§¶Ë£¬´ÓÍøÒ³ä¯ÀÀÆ÷ÏòÖ´ÐÐÔÚ Web ·þÎñÆ÷ÉÏµÄ³ÌÐòÇëÇóÊý¾Ý¡£ CGI ÃèÊöÁË¿Í»§¶ËºÍÕâ¸ö³ÌÐòÖ®¼ä´«ÊäÊý¾ÝµÄÒ»ÖÖ±ê×¼¡£ CGI µÄÒ»¸öÄ¿µÄÊÇÒª¶ÀÁ¢ÓÚÈÎºÎÓïÑÔµÄ£¬ËùÒÔ CGI ¿ÉÒÔÓÃÈÎºÎÒ»ÖÖÓïÑÔ±àÐ´£¬Ö»ÒªÕâÖÖÓïÑÔ¾ßÓÐ±ê×¼ÊäÈë¡¢Êä³öºÍ»·¾³±äÁ¿£¬ Èç php µÈ¡£
+##PHP æ”¯æŒ
+ç›®å‰ WEB æœåŠ¡å™¨å¯ä»¥å¤„ç† html æ–‡ä»¶å’Œ jpg å›¾ç‰‡äº†ã€‚ä¸‹é¢è€ƒè™‘æ€Žæ ·æ”¯æŒè§£æž php æ–‡ä»¶ï¼Œä»¥å‰è¦æ‰§è¡ŒåŠ¨æ€ç¨‹åºéƒ½æ˜¯é€šè¿‡ CGI æŽ¥å£æ¥å®Œæˆçš„ã€‚CGI å…¨ç§°æ˜¯ â€œé€šç”¨ç½‘å…³æŽ¥å£â€(Common Gateway Interface)ï¼Œ å®ƒå¯ä»¥è®©ä¸€ä¸ªå®¢æˆ·ç«¯ï¼Œä»Žç½‘é¡µæµè§ˆå™¨å‘æ‰§è¡Œåœ¨ Web æœåŠ¡å™¨ä¸Šçš„ç¨‹åºè¯·æ±‚æ•°æ®ã€‚ CGI æè¿°äº†å®¢æˆ·ç«¯å’Œè¿™ä¸ªç¨‹åºä¹‹é—´ä¼ è¾“æ•°æ®çš„ä¸€ç§æ ‡å‡†ã€‚ CGI çš„ä¸€ä¸ªç›®çš„æ˜¯è¦ç‹¬ç«‹äºŽä»»ä½•è¯­è¨€çš„ï¼Œæ‰€ä»¥ CGI å¯ä»¥ç”¨ä»»ä½•ä¸€ç§è¯­è¨€ç¼–å†™ï¼Œåªè¦è¿™ç§è¯­è¨€å…·æœ‰æ ‡å‡†è¾“å…¥ã€è¾“å‡ºå’ŒçŽ¯å¢ƒå˜é‡ï¼Œ å¦‚ php ç­‰ã€‚
 
-FastCGI ÊÇ Web ·þÎñÆ÷ºÍ´¦Àí³ÌÐòÖ®¼äÍ¨ÐÅµÄÒ»ÖÖÐ­Òé£¬ ÊÇ CGI µÄÒ»ÖÖ¸Ä½ø·½°¸£¬ËüÎªËùÓÐÒòÌØÍøÓ¦ÓÃÌá¹©¸ßÐÔÄÜ¡£FastCGI ÏñÊÇÒ»¸ö³£×¤ (long-live) ÐÍµÄ CGI£¬ Ëü¿ÉÒÔÒ»Ö±Ö´ÐÐ£¬ÔÚÇëÇóµ½´ïÊ±²»»á»¨·ÑÊ±¼äÈ¥ fork Ò»¸ö½ø³ÌÀ´´¦Àí(ÕâÊÇ CGI ×îÎªÈËÚ¸²¡µÄ fork-and-execute Ä£Ê½)¡£ ÕýÊÇÒòÎªËûÖ»ÊÇÒ»¸öÍ¨ÐÅÐ­Òé£¬Ëü»¹Ö§³Ö·Ö²¼Ê½µÄÔËËã£¬¼´ FastCGI ³ÌÐò¿ÉÒÔÔÚÍøÕ¾·þÎñÆ÷ÒÔÍâµÄÖ÷»úÉÏÖ´ÐÐ²¢ÇÒ½ÓÊÜÀ´×ÔÆäËüÍøÕ¾·þÎñÆ÷À´µÄÇëÇó¡£
+FastCGI æ˜¯ Web æœåŠ¡å™¨å’Œå¤„ç†ç¨‹åºä¹‹é—´é€šä¿¡çš„ä¸€ç§åè®®ï¼Œ æ˜¯ CGI çš„ä¸€ç§æ”¹è¿›æ–¹æ¡ˆï¼Œå®ƒä¸ºæ‰€æœ‰å› ç‰¹ç½‘åº”ç”¨æä¾›é«˜æ€§èƒ½ã€‚FastCGI åƒæ˜¯ä¸€ä¸ªå¸¸é©» (long-live) åž‹çš„ CGIï¼Œ å®ƒå¯ä»¥ä¸€ç›´æ‰§è¡Œï¼Œåœ¨è¯·æ±‚åˆ°è¾¾æ—¶ä¸ä¼šèŠ±è´¹æ—¶é—´åŽ» fork ä¸€ä¸ªè¿›ç¨‹æ¥å¤„ç†(è¿™æ˜¯ CGI æœ€ä¸ºäººè¯Ÿç—…çš„ fork-and-execute æ¨¡å¼)ã€‚ æ­£æ˜¯å› ä¸ºä»–åªæ˜¯ä¸€ä¸ªé€šä¿¡åè®®ï¼Œå®ƒè¿˜æ”¯æŒåˆ†å¸ƒå¼çš„è¿ç®—ï¼Œå³ FastCGI ç¨‹åºå¯ä»¥åœ¨ç½‘ç«™æœåŠ¡å™¨ä»¥å¤–çš„ä¸»æœºä¸Šæ‰§è¡Œå¹¶ä¸”æŽ¥å—æ¥è‡ªå…¶å®ƒç½‘ç«™æœåŠ¡å™¨æ¥çš„è¯·æ±‚ã€‚
 
-FastCGI ÊÇÓïÑÔÎÞ¹ØµÄ¡¢¿ÉÉìËõ¼Ü¹¹µÄ CGI ¿ª·ÅÀ©Õ¹£¬½« CGI ½âÊÍÆ÷½ø³Ì±£³ÖÔÚÄÚ´æÖÐ£¬ÒÔ´Ë»ñµÃ½Ï¸ßµÄÐÔÄÜ¡£ CGI ³ÌÐò·´¸´¼ÓÔØÊÇ CGI ÐÔÄÜµÍÏÂµÄÖ÷ÒªÔ­Òò£¬Èç¹û CGI ³ÌÐò±£³ÖÔÚÄÚ´æÖÐ²¢½ÓÊÜ FastCGI ½ø³Ì¹ÜÀíÆ÷µ÷¶È£¬ Ôò¿ÉÒÔÌá¹©Á¼ºÃµÄÐÔÄÜ¡¢ÉìËõÐÔ¡¢Fail-Over ÌØÐÔµÈ¡£
+FastCGI æ˜¯è¯­è¨€æ— å…³çš„ã€å¯ä¼¸ç¼©æž¶æž„çš„ CGI å¼€æ”¾æ‰©å±•ï¼Œå°† CGI è§£é‡Šå™¨è¿›ç¨‹ä¿æŒåœ¨å†…å­˜ä¸­ï¼Œä»¥æ­¤èŽ·å¾—è¾ƒé«˜çš„æ€§èƒ½ã€‚ CGI ç¨‹åºåå¤åŠ è½½æ˜¯ CGI æ€§èƒ½ä½Žä¸‹çš„ä¸»è¦åŽŸå› ï¼Œå¦‚æžœ CGI ç¨‹åºä¿æŒåœ¨å†…å­˜ä¸­å¹¶æŽ¥å— FastCGI è¿›ç¨‹ç®¡ç†å™¨è°ƒåº¦ï¼Œ åˆ™å¯ä»¥æä¾›è‰¯å¥½çš„æ€§èƒ½ã€ä¼¸ç¼©æ€§ã€Fail-Over ç‰¹æ€§ç­‰ã€‚
 
-Ò»°ãÇé¿öÏÂ£¬FastCGI µÄÕû¸ö¹¤×÷Á÷³ÌÊÇÕâÑùµÄ£º
-1. Web Server Æô¶¯Ê±ÔØÈë FastCGI ½ø³Ì¹ÜÀíÆ÷£¨PHP-FPM »ò Apache Module)¡£
-2. FastCGI ½ø³Ì¹ÜÀíÆ÷×ÔÉí³õÊ¼»¯£¬Æô¶¯¶à¸ö CGI ½âÊÍÆ÷½ø³Ì(¿É¼û¶à¸ö php-cgi)²¢µÈ´ýÀ´×Ô Web Server µÄÁ¬½Ó¡£
-3. µ±¿Í»§¶ËÇëÇóµ½´ï Web Server Ê±£¬FastCGI ½ø³Ì¹ÜÀíÆ÷Ñ¡Ôñ²¢Á¬½Óµ½Ò»¸ö CGI ½âÊÍÆ÷¡£ Web server ½« CGI »·¾³±äÁ¿ºÍ±ê×¼ÊäÈë·¢ËÍµ½ FastCGI ×Ó½ø³Ì php-cgi¡£
-4. FastCGI ×Ó½ø³ÌÍê³É´¦Àíºó½«±ê×¼Êä³öºÍ´íÎóÐÅÏ¢´ÓÍ¬Ò»Á¬½Ó·µ»Ø Web Server¡£µ± FastCGI ×Ó½ø³Ì¹Ø±ÕÁ¬½ÓÊ±£¬ ÇëÇó±ã¸æ´¦ÀíÍê³É¡£FastCGI ×Ó½ø³Ì½Ó×ÅµÈ´ý²¢´¦ÀíÀ´×Ô FastCGI ½ø³Ì¹ÜÀíÆ÷(ÔËÐÐÔÚ Web Server ÖÐ)µÄÏÂÒ»¸öÁ¬½Ó¡£ÔÚ CGI Ä£Ê½ÖÐ£¬php-cgi ÔÚ´Ë±ãÍË³öÁË¡£
+ä¸€èˆ¬æƒ…å†µä¸‹ï¼ŒFastCGI çš„æ•´ä¸ªå·¥ä½œæµç¨‹æ˜¯è¿™æ ·çš„ï¼š
+1. Web Server å¯åŠ¨æ—¶è½½å…¥ FastCGI è¿›ç¨‹ç®¡ç†å™¨ï¼ˆPHP-FPM æˆ– Apache Module)ã€‚
+2. FastCGI è¿›ç¨‹ç®¡ç†å™¨è‡ªèº«åˆå§‹åŒ–ï¼Œå¯åŠ¨å¤šä¸ª CGI è§£é‡Šå™¨è¿›ç¨‹(å¯è§å¤šä¸ª php-cgi)å¹¶ç­‰å¾…æ¥è‡ª Web Server çš„è¿žæŽ¥ã€‚
+3. å½“å®¢æˆ·ç«¯è¯·æ±‚åˆ°è¾¾ Web Server æ—¶ï¼ŒFastCGI è¿›ç¨‹ç®¡ç†å™¨é€‰æ‹©å¹¶è¿žæŽ¥åˆ°ä¸€ä¸ª CGI è§£é‡Šå™¨ã€‚ Web server å°† CGI çŽ¯å¢ƒå˜é‡å’Œæ ‡å‡†è¾“å…¥å‘é€åˆ° FastCGI å­è¿›ç¨‹ php-cgiã€‚
+4. FastCGI å­è¿›ç¨‹å®Œæˆå¤„ç†åŽå°†æ ‡å‡†è¾“å‡ºå’Œé”™è¯¯ä¿¡æ¯ä»ŽåŒä¸€è¿žæŽ¥è¿”å›ž Web Serverã€‚å½“ FastCGI å­è¿›ç¨‹å…³é—­è¿žæŽ¥æ—¶ï¼Œ è¯·æ±‚ä¾¿å‘Šå¤„ç†å®Œæˆã€‚FastCGI å­è¿›ç¨‹æŽ¥ç€ç­‰å¾…å¹¶å¤„ç†æ¥è‡ª FastCGI è¿›ç¨‹ç®¡ç†å™¨(è¿è¡Œåœ¨ Web Server ä¸­)çš„ä¸‹ä¸€ä¸ªè¿žæŽ¥ã€‚åœ¨ CGI æ¨¡å¼ä¸­ï¼Œphp-cgi åœ¨æ­¤ä¾¿é€€å‡ºäº†ã€‚
 
-##FastCGI Ð­Òé¹æ·¶
-µ± WEB ·þÎñÆ÷½ÓÊÕµ½Ò»¸ö PHP ÎÄ¼þÇëÇóÊ±£¬WEB ·þÎñÆ÷»áÍ¨¹ý FastCGI ½«ÇëÇó×ª·¢¸ø FastCGI ½ø³Ì¹ÜÀíÆ÷£¨¼´ PHP-FPM£©£¬FastCGI ½ø³Ì¹ÜÀíÆ÷½ÓÊÕµ½ÇëÇóºó£¬µ÷ÓÃ php ½âÊÍÆ÷Ö´ÐÐ php ÎÄ¼þ£¬È»ºó½«Ö´ÐÐ½á¹û·µ»Ø¸øWEB·þÎñÆ÷£¬Ö®ºó WEB ·þÎñÆ÷ÔÙ½« FastCGI ½ø³Ì¹ÜÀíÆ÷·µ»ØµÄ½á¹û´¦Àí³É HTTP ÏìÓ¦±¨ÎÄ¸ñÊ½·¢ËÍ¸øä¯ÀÀÆ÷¡£
+##FastCGI åè®®è§„èŒƒ
+å½“ WEB æœåŠ¡å™¨æŽ¥æ”¶åˆ°ä¸€ä¸ª PHP æ–‡ä»¶è¯·æ±‚æ—¶ï¼ŒWEB æœåŠ¡å™¨ä¼šé€šè¿‡ FastCGI å°†è¯·æ±‚è½¬å‘ç»™ FastCGI è¿›ç¨‹ç®¡ç†å™¨ï¼ˆå³ PHP-FPMï¼‰ï¼ŒFastCGI è¿›ç¨‹ç®¡ç†å™¨æŽ¥æ”¶åˆ°è¯·æ±‚åŽï¼Œè°ƒç”¨ php è§£é‡Šå™¨æ‰§è¡Œ php æ–‡ä»¶ï¼Œç„¶åŽå°†æ‰§è¡Œç»“æžœè¿”å›žç»™WEBæœåŠ¡å™¨ï¼Œä¹‹åŽ WEB æœåŠ¡å™¨å†å°† FastCGI è¿›ç¨‹ç®¡ç†å™¨è¿”å›žçš„ç»“æžœå¤„ç†æˆ HTTP å“åº”æŠ¥æ–‡æ ¼å¼å‘é€ç»™æµè§ˆå™¨ã€‚
 
-´ÓÉÏÃæÃèÊö¿ÉÒÔ¿´³ö£¬ä¯ÀÀÆ÷Óë WEB ·þÎñÆ÷Ö®¼äµÄÍ¨ÐÅÐ­ÒéÊÇ HTTP Ð­Òé£¬ÄÇÃ´ WEB ·þÎñÆ÷Óë FastCGI ½ø³Ì¹ÜÀíÆ÷Ö®¼äÍ¨ÐÅÐ­ÒéÊÇÊ²Ã´ÄØ£¬´ð°¸¾ÍÊÇ FastCGI Ð­Òé¡£
+ä»Žä¸Šé¢æè¿°å¯ä»¥çœ‹å‡ºï¼Œæµè§ˆå™¨ä¸Ž WEB æœåŠ¡å™¨ä¹‹é—´çš„é€šä¿¡åè®®æ˜¯ HTTP åè®®ï¼Œé‚£ä¹ˆ WEB æœåŠ¡å™¨ä¸Ž FastCGI è¿›ç¨‹ç®¡ç†å™¨ä¹‹é—´é€šä¿¡åè®®æ˜¯ä»€ä¹ˆå‘¢ï¼Œç­”æ¡ˆå°±æ˜¯ FastCGI åè®®ã€‚
 
-ÏêÏ¸Ð­Òé¹æ·¶¿É²Î¼û£º 
-ÖÐÎÄ°æ£ºhttp://andylin02.iteye.com/blog/648412 
-Ó¢ÎÄ°æ£ºhttp://www.fastcgi.com/devkit/doc/fcgi-spec.html
+è¯¦ç»†åè®®è§„èŒƒå¯å‚è§ï¼š 
+ä¸­æ–‡ç‰ˆï¼šhttp://andylin02.iteye.com/blog/648412 
+è‹±æ–‡ç‰ˆï¼šhttp://www.fastcgi.com/devkit/doc/fcgi-spec.html
 
-FastCGI Ð­Òé´ó¸ÅÁ÷³Ì£º
-ÇëÇóÓÉ FCGI_BEGIN_REQUEST ¿ªÊ¼£¬FCGI_PARAMS ±íÊ¾ÐèÒª´«µÝ»·¾³±äÁ¿ (PHPÖÐµÄ $_SERVER Êý×é¾ÍÊÇÍ¨¹ý FCGI_PARAMS À´´«µÝµÄ£¬µ±È»Äú»¹¿ÉÒÔ¸½¼Ó×Ô¶¨ÒåµÄÊý¾Ý)¡£FCGI_STDIN ±íÊ¾Ò»¸öÊäÈëµÄ¿ªÊ¼£¬±ÈÈçÄúÐèÒª POST ¹ýÈ¥µÄÊý¾Ý¡£FCGI_STDOUT ºÍ FCGI_STDERR±êÊ¶Ó¦ÓÃ¿ªÊ¼ÏìÓ¦¡£FCGI_END_REQUEST ±íÊ¾Ò»´ÎÇëÇóµÄÍê³É£¬ÓÉÓ¦ÓÃ·¢ËÍ¡£
+FastCGI åè®®å¤§æ¦‚æµç¨‹ï¼š
+è¯·æ±‚ç”± FCGI_BEGIN_REQUEST å¼€å§‹ï¼ŒFCGI_PARAMS è¡¨ç¤ºéœ€è¦ä¼ é€’çŽ¯å¢ƒå˜é‡ (PHPä¸­çš„ $_SERVER æ•°ç»„å°±æ˜¯é€šè¿‡ FCGI_PARAMS æ¥ä¼ é€’çš„ï¼Œå½“ç„¶æ‚¨è¿˜å¯ä»¥é™„åŠ è‡ªå®šä¹‰çš„æ•°æ®)ã€‚FCGI_STDIN è¡¨ç¤ºä¸€ä¸ªè¾“å…¥çš„å¼€å§‹ï¼Œæ¯”å¦‚æ‚¨éœ€è¦ POST è¿‡åŽ»çš„æ•°æ®ã€‚FCGI_STDOUT å’Œ FCGI_STDERRæ ‡è¯†åº”ç”¨å¼€å§‹å“åº”ã€‚FCGI_END_REQUEST è¡¨ç¤ºä¸€æ¬¡è¯·æ±‚çš„å®Œæˆï¼Œç”±åº”ç”¨å‘é€ã€‚
 
-FastCGI ÊÇ»ùÓÚÁ÷µÄÐ­Òé£¬²¢ÇÒÊÇ 8 ×Ö½Ú¶ÔÆë£¬Òò´Ë²»ÐèÒª¿¼ÂÇ×Ö½ÚÐò£¬µ«ÊÇÒª¿¼ÂÇÌî³ä¡£FastCGI µÄ°üÍ·ÊÇ¹Ì¶¨µÄ 8 ×Ö½Ú£¬²»Í¬µÄÇëÇóÓÐ²»Í¬µÄ°üÌå½á¹¹¡£°üÍ·ºÍ°üÌå×é³ÉÒ»¸ö Record(¼ÇÂ¼)¡£¾ßÌåÇë²Î¿¼Ð­Òé¹æ·¶¡£°üÍ·¼ûÏÂÃæµÄ FCGI_Header ½á¹¹Ìå£¬FCGI_BEGIN_REQUEST ÇëÇó°üÌå¼ûÏÂÃæµÄ FCGI_BeginRequestBody ½á¹¹Ìå£¬ FCGI_BEGIN_REQUEST ÇëÇó¼ÇÂ¼¼ûÏÂÃæµÄ FCGI_BeginRequestRecord½á¹¹Ìå£¬FCGI_PARAMS ´«µÝ²ÎÊý¼ÇÂ¼¼ûÏÂÃæµÄ FCGI_ParamsRecord ½á¹¹Ìå£º
+FastCGI æ˜¯åŸºäºŽæµçš„åè®®ï¼Œå¹¶ä¸”æ˜¯ 8 å­—èŠ‚å¯¹é½ï¼Œå› æ­¤ä¸éœ€è¦è€ƒè™‘å­—èŠ‚åºï¼Œä½†æ˜¯è¦è€ƒè™‘å¡«å……ã€‚FastCGI çš„åŒ…å¤´æ˜¯å›ºå®šçš„ 8 å­—èŠ‚ï¼Œä¸åŒçš„è¯·æ±‚æœ‰ä¸åŒçš„åŒ…ä½“ç»“æž„ã€‚åŒ…å¤´å’ŒåŒ…ä½“ç»„æˆä¸€ä¸ª Record(è®°å½•)ã€‚å…·ä½“è¯·å‚è€ƒåè®®è§„èŒƒã€‚åŒ…å¤´è§ä¸‹é¢çš„ FCGI_Header ç»“æž„ä½“ï¼ŒFCGI_BEGIN_REQUEST è¯·æ±‚åŒ…ä½“è§ä¸‹é¢çš„ FCGI_BeginRequestBody ç»“æž„ä½“ï¼Œ FCGI_BEGIN_REQUEST è¯·æ±‚è®°å½•è§ä¸‹é¢çš„ FCGI_BeginRequestRecordç»“æž„ä½“ï¼ŒFCGI_PARAMS ä¼ é€’å‚æ•°è®°å½•è§ä¸‹é¢çš„ FCGI_ParamsRecord ç»“æž„ä½“ï¼š
 ```
 /*
- * °üÍ·
+ * åŒ…å¤´
  */
 typedef struct{
     unsigned char version;
@@ -109,7 +110,7 @@ typedef struct{
 }FCGI_Header;
 
 /*
- * FCGI_BEGIN_REQUESTÇëÇó°üÌå
+ * FCGI_BEGIN_REQUESTè¯·æ±‚åŒ…ä½“
  */
 typedef struct{
     unsigned char roleB1;
@@ -119,7 +120,7 @@ typedef struct{
 }FCGI_BeginRequestBody;
 
 /*
- * FCGI_BEGIN_REQUESTÇëÇó¼ÇÂ¼
+ * FCGI_BEGIN_REQUESTè¯·æ±‚è®°å½•
  */
 typedef struct{
     FCGI_Header header;
@@ -127,7 +128,7 @@ typedef struct{
 }FCGI_BeginRequestRecord;
 
 /*
- * FCGI_PARAMS´«µÝ²ÎÊý¼ÇÂ¼
+ * FCGI_PARAMSä¼ é€’å‚æ•°è®°å½•
  */
 typedef struct{
     FCGI_Header header;
@@ -137,9 +138,9 @@ typedef struct{
 }FCGI_ParamsRecord;
 ```
 
-ÎªÁË¼ò»¯ÏîÄ¿µÄ¸´ÔÓÐÔ£¬ÏîÄ¿ÖÐ»áºöÂÔ FCGI_STDERR ºÍ FCGI_END_REQUEST¡£WEB ·þÎñÆ÷´¦Àí PHP ÎÄ¼þÇëÇóÊ±£¬Ê×ÏÈ»áÊ¹ÓÃ FCGI_BEGIN_REQUEST ¼ÇÂ¼½á¹¹ÌåÏò FastCGI ½ø³Ì¹ÜÀíÆ÷¿ªÊ¼ÇëÇó£¬È»ºóÊ¹ÓÃ FCGI_PARAMS ¼ÇÂ¼½á¹¹ÌåÏò FastCGI ½ø³Ì¹ÜÀíÆ÷´«µÝ²ÎÊý£¬°üº¬ php ÎÄ¼þÃû¡¢query ×Ö·û´®£¬HTTP ÇëÇó·½·¨£¬Ö®ºó·¢ËÍÒ»¸ö¿Õ°üÌåµÄ STDIN °üÀ´½áÊøÕâ´ÎÇëÇó¡£ÓÉÓÚÊÇ¿Õ°üÌå£¬ËùÒÔÖ±½Ó·¢ËÍ type Îª FCGI_STDIN µÄ FCGI_Header ½á¹¹Ìå¾ÍÐÐÁË¡£
+ä¸ºäº†ç®€åŒ–é¡¹ç›®çš„å¤æ‚æ€§ï¼Œé¡¹ç›®ä¸­ä¼šå¿½ç•¥ FCGI_STDERR å’Œ FCGI_END_REQUESTã€‚WEB æœåŠ¡å™¨å¤„ç† PHP æ–‡ä»¶è¯·æ±‚æ—¶ï¼Œé¦–å…ˆä¼šä½¿ç”¨ FCGI_BEGIN_REQUEST è®°å½•ç»“æž„ä½“å‘ FastCGI è¿›ç¨‹ç®¡ç†å™¨å¼€å§‹è¯·æ±‚ï¼Œç„¶åŽä½¿ç”¨ FCGI_PARAMS è®°å½•ç»“æž„ä½“å‘ FastCGI è¿›ç¨‹ç®¡ç†å™¨ä¼ é€’å‚æ•°ï¼ŒåŒ…å« php æ–‡ä»¶åã€query å­—ç¬¦ä¸²ï¼ŒHTTP è¯·æ±‚æ–¹æ³•ï¼Œä¹‹åŽå‘é€ä¸€ä¸ªç©ºåŒ…ä½“çš„ STDIN åŒ…æ¥ç»“æŸè¿™æ¬¡è¯·æ±‚ã€‚ç”±äºŽæ˜¯ç©ºåŒ…ä½“ï¼Œæ‰€ä»¥ç›´æŽ¥å‘é€ type ä¸º FCGI_STDIN çš„ FCGI_Header ç»“æž„ä½“å°±è¡Œäº†ã€‚
 ```
-// Ê×ÏÈ¹¹ÔìÒ»¸öFCGI_BeginRequestRecord½á¹¹
+// é¦–å…ˆæž„é€ ä¸€ä¸ªFCGI_BeginRequestRecordç»“æž„
     FCGI_BeginRequestRecord beginRecord;
     beginRecord.header = 
         makeHeader(FCGI_BEGIN_REQUEST, FCGI_REQUEST_ID, sizeof(beginRecord.body), 0);
@@ -147,9 +148,9 @@ typedef struct{
     str_len = write(sock, &beginRecord, sizeof(beginRecord));
 ```
 
-ÉÏÃæµÄ´úÂë¹¹ÔìÒ»¸öFCGI_Header½á¹¹ÌåºÍFCGI_BeginRequestBody½á¹¹Ìå×é³ÉÒ»¸öFCGI_BEGIN_REQUEST¼ÇÂ¼£¬·¢ËÍ¸øFastCGI½ø³Ì¹ÜÀíÆ÷±íÊ¾¿ªÊ¼ÇëÇó¡£
+ä¸Šé¢çš„ä»£ç æž„é€ ä¸€ä¸ªFCGI_Headerç»“æž„ä½“å’ŒFCGI_BeginRequestBodyç»“æž„ä½“ç»„æˆä¸€ä¸ªFCGI_BEGIN_REQUESTè®°å½•ï¼Œå‘é€ç»™FastCGIè¿›ç¨‹ç®¡ç†å™¨è¡¨ç¤ºå¼€å§‹è¯·æ±‚ã€‚
 ```
-// ´«µÝFCGI_PARAMS²ÎÊý
+// ä¼ é€’FCGI_PARAMSå‚æ•°
     char *params[][2] = {
         {"SCRIPT_FILENAME", "/home/shiyanlou/php-server/test.php"}, 
         {"REQUEST_METHOD", "GET"}, 
@@ -160,11 +161,11 @@ typedef struct{
     int i, contentLength, paddingLength;
     FCGI_ParamsRecord *paramsRecordp;
     for(i = 0; params[i][0] != ""; i++){
-        contentLength = strlen(params[i][0]) + strlen(params[i][1]) + 2; // 2×Ö½ÚÊÇÁ½¸ö³¤¶ÈÖµ
+        contentLength = strlen(params[i][0]) + strlen(params[i][1]) + 2; // 2å­—èŠ‚æ˜¯ä¸¤ä¸ªé•¿åº¦å€¼
         paddingLength = (contentLength % 8) == 0 ? 0 : 8 - (contentLength % 8);
         paramsRecordp = (FCGI_ParamsRecord *)malloc(sizeof(FCGI_ParamsRecord) + contentLength + paddingLength);
-        paramsRecordp->nameLength = (unsigned char)strlen(params[i][0]);    // Ìî³ä²ÎÊýÖµ
-        paramsRecordp->valueLength = (unsigned char)strlen(params[i][1]);   // Ìî³ä²ÎÊýÃû
+        paramsRecordp->nameLength = (unsigned char)strlen(params[i][0]);    // å¡«å……å‚æ•°å€¼
+        paramsRecordp->valueLength = (unsigned char)strlen(params[i][1]);   // å¡«å……å‚æ•°å
         paramsRecordp->header = 
             makeHeader(FCGI_PARAMS, FCGI_REQUEST_ID, contentLength, paddingLength);
         memset(paramsRecordp->data, 0, contentLength + paddingLength);
@@ -180,18 +181,18 @@ typedef struct{
     }
 ```
 
-ÇëÇó¿ªÊ¼ºó£¬WEB ·þÎñÆ÷Í¨¹ýÉÏÃæµÄ´úÂëÏò FastCGI ½ø³Ì¹ÜÀíÆ÷·¢ËÍ FCGI_PARAMS ¼ÇÂ¼£¬ÓÉÓÚ FastCGI Ð­Òé¹æ¶¨Êý¾Ý 8 ×Ö½Ú¶ÔÆë£¬ÐèÒª¶ÔÊý¾Ý½øÐÐ 8 ×Ö½Ú¶ÔÆë¡£
+è¯·æ±‚å¼€å§‹åŽï¼ŒWEB æœåŠ¡å™¨é€šè¿‡ä¸Šé¢çš„ä»£ç å‘ FastCGI è¿›ç¨‹ç®¡ç†å™¨å‘é€ FCGI_PARAMS è®°å½•ï¼Œç”±äºŽ FastCGI åè®®è§„å®šæ•°æ® 8 å­—èŠ‚å¯¹é½ï¼Œéœ€è¦å¯¹æ•°æ®è¿›è¡Œ 8 å­—èŠ‚å¯¹é½ã€‚
 
 ```
- // ´«µÝFCGI_STDIN²ÎÊý
+ // ä¼ é€’FCGI_STDINå‚æ•°
     FCGI_Header stdinHeader;
     stdinHeader = makeHeader(FCGI_STDIN, FCGI_REQUEST_ID, 0, 0);
     write(sock, &stdinHeader, sizeof(stdinHeader));
 ```
 
-´«µÝÍêFCGI_PARAMS²ÎÊýºó£¬Í¨¹ýÉÏÃæµÄ´úÂëÏòFastCGI½ø³Ì¹ÜÀíÆ÷·¢ËÍÒ»¸ö¿Õ°üÌåµÄFCGI_STDIN¼ÇÂ¼£¬±íÊ¾ÇëÇó·¢ËÍÍê±Ï¡£
+ä¼ é€’å®ŒFCGI_PARAMSå‚æ•°åŽï¼Œé€šè¿‡ä¸Šé¢çš„ä»£ç å‘FastCGIè¿›ç¨‹ç®¡ç†å™¨å‘é€ä¸€ä¸ªç©ºåŒ…ä½“çš„FCGI_STDINè®°å½•ï¼Œè¡¨ç¤ºè¯·æ±‚å‘é€å®Œæ¯•ã€‚
 ```
-// ¶ÁÈ¡FastCGI½ø³Ì¹ÜÀíÆ÷ÏìÓ¦µÄÊý¾Ý
+// è¯»å–FastCGIè¿›ç¨‹ç®¡ç†å™¨å“åº”çš„æ•°æ®
     FCGI_Header respHeader;
     char *message;
     str_len = read(sock, &respHeader, 8);
@@ -212,18 +213,18 @@ typedef struct{
     }
 ```
 
-ÉÏÃæµÄ´úÂëÊ×ÏÈ¶ÁÈ¡ FastCGI ½ø³Ì¹ÜÀíÆ÷ÏìÓ¦Êý¾ÝµÄÇ° 8 ×Ö½ÚÊý¾Ý£¬Õâ 8 ×Ö½ÚÊý¾ÝÕýºÃÊÇÒ»¸ö FCGI_Header ½á¹¹Ìå±äÁ¿¡£È»ºóÍ¨¹ýÅÐ¶Ï type ÊÇ·ñÊÇ FastCGI ½ø³Ì¹ÜÀíÆ÷ÏìÓ¦Êý¾Ý¡£Èç¹ûÊÇ£¬¶ÁÈ¡ÏìÓ¦Êý¾Ý³¤¶È£¬Ö®ºó¼ÌÐø¶ÁÈ¡¸Ã³¤¶ÈµÄÊý¾Ý¡£ÖÁ´Ë£¬WEB ·þÎñÆ÷Óë FastCGI ½ø³Ì¹ÜÀíÆ÷µÄ½»»¥½áÊøÁË¡£
+ä¸Šé¢çš„ä»£ç é¦–å…ˆè¯»å– FastCGI è¿›ç¨‹ç®¡ç†å™¨å“åº”æ•°æ®çš„å‰ 8 å­—èŠ‚æ•°æ®ï¼Œè¿™ 8 å­—èŠ‚æ•°æ®æ­£å¥½æ˜¯ä¸€ä¸ª FCGI_Header ç»“æž„ä½“å˜é‡ã€‚ç„¶åŽé€šè¿‡åˆ¤æ–­ type æ˜¯å¦æ˜¯ FastCGI è¿›ç¨‹ç®¡ç†å™¨å“åº”æ•°æ®ã€‚å¦‚æžœæ˜¯ï¼Œè¯»å–å“åº”æ•°æ®é•¿åº¦ï¼Œä¹‹åŽç»§ç»­è¯»å–è¯¥é•¿åº¦çš„æ•°æ®ã€‚è‡³æ­¤ï¼ŒWEB æœåŠ¡å™¨ä¸Ž FastCGI è¿›ç¨‹ç®¡ç†å™¨çš„äº¤äº’ç»“æŸäº†ã€‚
 
-##ÅäÖÃ
-Ê×ÏÈ°²×° php-fpm£¬Ê¹ÓÃÈçÏÂÃüÁî£º
+##é…ç½®
+é¦–å…ˆå®‰è£… php-fpmï¼Œä½¿ç”¨å¦‚ä¸‹å‘½ä»¤ï¼š
 ```
 sudo apt-get install php5-fpm
 ```
-È»ºóÐÞ¸Ä php5-fpm µÄÅäÖÃÎÄ¼þ£¬¼´ /etc/php5/fpm/pool.d/www.conf ÎÄ¼þ¡£
+ç„¶åŽä¿®æ”¹ php5-fpm çš„é…ç½®æ–‡ä»¶ï¼Œå³ /etc/php5/fpm/pool.d/www.conf æ–‡ä»¶ã€‚
 
-¶¨Î»µ½µÚ 33 ÐÐ£¬½« listen = /var/run/php5-fpm.sock ¸ÄÎª listen = 127.0.0.1:9000£¬È»ºóÖ´ÐÐÒÔÏÂÃüÁîÔËÐÐ php-fpm¡£
+å®šä½åˆ°ç¬¬ 33 è¡Œï¼Œå°† listen = /var/run/php5-fpm.sock æ”¹ä¸º listen = 127.0.0.1:9000ï¼Œç„¶åŽæ‰§è¡Œä»¥ä¸‹å‘½ä»¤è¿è¡Œ php-fpmã€‚
 ```
 sudo php5-fpm
 ```
-Ê¹ÓÃ netstat -apn | head -10¿É ÒÔ²é¿´ÊÇ·ñÆô¶¯³É¹¦¡£
-FastCGI ºÍ PHP-FPM µÄ¹ØÏµ¿É²Î¼û£ºhttp://segmentfault.com/q/1010000000256516
+ä½¿ç”¨ netstat -apn | head -10å¯ ä»¥æŸ¥çœ‹æ˜¯å¦å¯åŠ¨æˆåŠŸã€‚
+FastCGI å’Œ PHP-FPM çš„å…³ç³»å¯å‚è§ï¼šhttp://segmentfault.com/q/1010000000256516
