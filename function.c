@@ -87,7 +87,7 @@ extern void sendError(void *client_sockfd)
     safe_write(c_sockfd,body,strlen(body));
     
     /*send log*/
-    fp_send = fopen("send.txt","a+");
+    fp_send = fopen("log/send.txt","a+");
     if(fp_send == NULL)
     {
         Debug("Error:fopen()-send.txt\n");
@@ -131,7 +131,7 @@ extern void sendDate(void *client_sockfd,char *filename)
     else
     {
         /*error log*/
-        fp_err = fopen("error.txt","a+");
+        fp_err = fopen("log/error.txt","a+");
         if(fp_err == NULL)
         {
             Debug("Error:fopen()-error.txt\n");
@@ -162,7 +162,7 @@ extern void catHTML(void *client_sockfd,char *filename)
     safe_write(c_sockfd,header,strlen(header));
 
     /*send log*/
-    fp_send = fopen("send.txt","a+");
+    fp_send = fopen("log/send.txt","a+");
     if(fp_send == NULL)
     {
         Debug("Error:fopen()-send.txt\n");
@@ -212,7 +212,7 @@ extern void catJPEG(void *client_sockfd,char *filename)
     safe_write(c_sockfd,header,strlen(header));
 
     /*send log*/
-    fp_send = fopen("send.txt","a+");
+    fp_send = fopen("log/send.txt","a+");
     if(fp_send == NULL)
     {
         Debug("Error:fopen()-send.txt\n");
@@ -260,12 +260,13 @@ extern void handleRequest(void *client_sockfd)
     char filename[20]; //请求文件名
     FILE *fp_req;
     time_t t_req;
+    char temp[20];
 
     /*read request*/
     read(c_sockfd,buf,sizeof(buf)-1);
     
     /*request log*/
-    fp_req = fopen("request.txt","a+");
+    fp_req = fopen("log/request.txt","a+");
     if(fp_req == NULL)
     {
         Debug("Error:fopen()-request.txt");
@@ -293,7 +294,8 @@ extern void handleRequest(void *client_sockfd)
     }
 
     /*take filename*/
-    strcpy(filename,strtok(NULL," /"));
+    strcpy(temp,strtok(NULL," "));
+    strcpy(filename,temp+1);
 
     /*read file and send*/
     sendDate(client_sockfd,filename);
