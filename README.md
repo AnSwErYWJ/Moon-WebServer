@@ -21,7 +21,7 @@ sudo ./Moon
 sudo apt-get install php5-fpm
 #修改php5-fpm的配置文件(/etc/php5/fpm/pool.d/www.conf),第33行，将 listen = /var/run/php5-fpm.sock 改为 listen = 127.0.0.1:9000
 ./start_php-fpm 
-#打开浏览器，在地址栏输入"127.0.0.1:8080/www/test.php?name=AnSwEr"
+#打开浏览器，在地址栏输入"127.0.0.1:8080/test.php?name=AnSwEr"
 
 make clean
 
