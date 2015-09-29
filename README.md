@@ -11,26 +11,36 @@
 - 支持处理HTML
 - 支持JPEG等格式图片
 
-## Compile and run
+## Configure
+### log backup
 ```
-make
-sudo ./Moon
-#打开浏览器，在地址栏输入"127.0.0.1:8080/www/one.html"或"127.0.0.1:8080/www/two.html"
-
-#若没有安装php-fpm
-sudo apt-get install php5-fpm
-#修改php5-fpm的配置文件(/etc/php5/fpm/pool.d/www.conf),第33行，将 listen = /var/run/php5-fpm.sock 改为 listen = 127.0.0.1:9000
-./start_php-fpm 
-#打开浏览器，在地址栏输入"127.0.0.1:8080/test.php?name=AnSwEr"
-
-make clean
-
-#备份日志
 cd log/ 
 ./empty.sh cli_log.txt
 ./empty.sh send_log.txt
 ./empty.sh req_log.txt
 ./empty.sh error_log.txt
+```
+
+###install php-fpm
+```
+sudo apt-get install php5-fpm
+```
+###modify configuration
+```
+修改php5-fpm的配置文件(/etc/php5/fpm/pool.d/www.conf),第33行，将 listen = /var/run/php5-fpm.sock 改为 listen = 127.0.0.1:9000
+```
+###start php-fpm
+```
+./start_php-fpm
+```
+
+## Compile and run
+```
+make
+./Moon
+#打开浏览器，在地址栏输入"127.0.0.1:8080/www/one.html"或"127.0.0.1:8080/www/two.html"
+#打开浏览器，在地址栏输入"127.0.0.1:8080/test.php?name=AnSwEr"
+make clean
 ```
 
 ## Feedback
