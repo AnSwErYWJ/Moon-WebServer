@@ -87,7 +87,7 @@ extern void sendError(void *client_sockfd)
     safe_write(c_sockfd,body,strlen(body));
     
     /*send log*/
-    fp_send = fopen("log/send.txt","a+");
+    fp_send = fopen("log/send_log.txt","a+");
     if(fp_send == NULL)
     {
         Debug("Error:fopen()-send.txt\n");
@@ -131,7 +131,7 @@ extern void sendDate(void *client_sockfd,char *filename)
     else
     {
         /*error log*/
-        fp_err = fopen("log/error.txt","a+");
+        fp_err = fopen("log/error_log.txt","a+");
         if(fp_err == NULL)
         {
             Debug("Error:fopen()-error.txt\n");
@@ -162,7 +162,7 @@ extern void catHTML(void *client_sockfd,char *filename)
     safe_write(c_sockfd,header,strlen(header));
 
     /*send log*/
-    fp_send = fopen("log/send.txt","a+");
+    fp_send = fopen("log/send_log.txt","a+");
     if(fp_send == NULL)
     {
         Debug("Error:fopen()-send.txt\n");
@@ -212,7 +212,7 @@ extern void catJPEG(void *client_sockfd,char *filename)
     safe_write(c_sockfd,header,strlen(header));
 
     /*send log*/
-    fp_send = fopen("log/send.txt","a+");
+    fp_send = fopen("log/send_log.txt","a+");
     if(fp_send == NULL)
     {
         Debug("Error:fopen()-send.txt\n");
