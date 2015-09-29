@@ -6,7 +6,7 @@
  ************************************************************************/
 
 /*
- * Function
+ * 功能接口
  */
 
 #include <stdio.h>
@@ -90,7 +90,7 @@ extern void sendError(void *client_sockfd)
     fp_send = fopen("log/send_log.txt","a+");
     if(fp_send == NULL)
     {
-        Debug("Error:fopen()-send.txt\n");
+        Debug("Error:fopen()-log/send_log.txt\n");
     }
     time(&t_send);
     fputs(ctime(&t_send),fp_send);
@@ -134,7 +134,7 @@ extern void sendDate(void *client_sockfd,char *filename)
         fp_err = fopen("log/error_log.txt","a+");
         if(fp_err == NULL)
         {
-            Debug("Error:fopen()-error.txt\n");
+            Debug("Error:fopen()-log/error_log.txt\n");
         }
         time(&t_err);
         fputs(ctime(&t_err),fp_err);
@@ -165,7 +165,7 @@ extern void catHTML(void *client_sockfd,char *filename)
     fp_send = fopen("log/send_log.txt","a+");
     if(fp_send == NULL)
     {
-        Debug("Error:fopen()-send.txt\n");
+        Debug("Error:fopen()-log/send_log.txt\n");
     }
     time(&t_send);
     fputs(ctime(&t_send),fp_send);
@@ -215,7 +215,7 @@ extern void catJPEG(void *client_sockfd,char *filename)
     fp_send = fopen("log/send_log.txt","a+");
     if(fp_send == NULL)
     {
-        Debug("Error:fopen()-send.txt\n");
+        Debug("Error:fopen()-log/send_log.txt\n");
     }
     time(&t_send);
     fputs(ctime(&t_send),fp_send);
@@ -269,7 +269,7 @@ extern void handleRequest(void *client_sockfd)
     fp_req = fopen("log/req_log.txt","a+");
     if(fp_req == NULL)
     {
-        Debug("Error:fopen()-request.txt");
+        Debug("Error:fopen()-log/req_log.txt");
     }
     time(&t_req);
     fputs(ctime(&t_req),fp_req);
