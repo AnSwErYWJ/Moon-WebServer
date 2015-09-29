@@ -1,4 +1,6 @@
 <?php
-echo "Moon Server\n";
-echo "Author is " . &_GET['name'];
+
+echo "Moon Server.\n";
+echo "The Author is " . $_GET['name'];
+
 ?>
