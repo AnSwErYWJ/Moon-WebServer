@@ -17,6 +17,9 @@
 #include <string.h>
 #include <pthread.h>
 #include <time.h>
+#include "fastCGI.h"
+#include <sys/socket.h>
+#include <arpa/inet.h>
 
 /*
  * safe to read and write
@@ -110,15 +113,25 @@ extern void sendDate(void *client_sockfd,char *filename)
     char ext[10];
     time_t t_err;
     FILE *fp_err;
+    char query[100];
 
-    strcpy(name,filename);
+    if(strstr(filename,"?") != NULL)
+    {
+        strcpy(name,strtok(filename,"?"));
+        strcpy(query,strtok(NULL,"?"));
+    }
+    else
+    {
+        strcpy(name,filename);
+        strcpy(query,"name=123456");
+    }
 
     /*check ext*/
     strtok(name,".");
     strcpy(ext,strtok(NULL,"."));
     if(strcmp(ext,"php") == 0)
     {
-        
+       catPHP(client_sockfd,filename,query); 
     }
     else if(strcmp(ext,"html") == 0)
     {
@@ -245,6 +258,123 @@ extern void catJPEG(void *client_sockfd,char *filename)
     fclose(fp_send);
     fclose(fw);
     fclose(fp);
+    close(c_sockfd);
+}
+
+void catPHP(void *client_sockfd, char *filename, char *query)
+{
+    int c_sockfd = *((int *) client_sockfd);
+    int sock;
+    struct sockaddr_in serv_addr;
+    int str_len;
+    int contentLengthR;
+    char msg[50];
+    char buf[MAXSIZE];
+    char status[] = "HTTP/1.0 200 OK\r\n";
+    char header[] = "Server: Moon Server\r\n";
+    int i, contentLength, paddingLength;
+    time_t t_send;
+    FILE *fp_send;
+
+    // 创建套接字
+	sock = socket(PF_INET, SOCK_STREAM, 0);
+	if(-1 == sock)
+    {
+        Debug("Error:socket()\n");
+	}
+
+	memset(&serv_addr, 0, sizeof(serv_addr));
+	serv_addr.sin_family = AF_INET;
+	serv_addr.sin_addr.s_addr = inet_addr(FCGI_HOST);
+	serv_addr.sin_port = htons(FCGI_PORT);
+
+    // 连接服务器
+	if(-1 == connect(sock, (struct sockaddr *) &serv_addr, sizeof(serv_addr)))
+    {
+        Debug("Error:connetct()\n");
+	}
+
+    // 首先构造一个FCGI_BeginRequestRecord结构
+    FCGI_BeginRequestRecord beginRecord;
+    beginRecord.header = makeHeader(FCGI_BEGIN_REQUEST, FCGI_REQUEST_ID, sizeof(beginRecord.body), 0);
+    beginRecord.body = makeBeginRequestBody(FCGI_RESPONDER);
+    
+    str_len = safe_write(sock, &beginRecord, sizeof(beginRecord));
+	if(-1 == str_len)
+    {
+        Debug("Error:Write beginRecord failed!\n");
+	}
+        
+    /*send log*/
+    fp_send = fopen("log/send_log.txt","a+");
+    if(fp_send == NULL)
+    {
+        Debug("Error:fopen()-log/send_log.txt\n");
+    }
+    time(&t_send);
+    fputs(ctime(&t_send),fp_send);
+    fwrite(&beginRecord,1,sizeof(beginRecord),fp_send);
+    
+    // 传递FCGI_PARAMS参数
+    strcpy(msg, "/home/answer/Moon-WebServer/");
+    strcat(msg, filename);
+    char *params[][2] = {
+        {"SCRIPT_FILENAME", msg}, 
+        {"REQUEST_METHOD", "GET"}, 
+        {"QUERY_STRING", query}, 
+        {"", ""}
+    };
+
+    FCGI_ParamsRecord *paramsRecordp;
+    for(i = 0; params[i][0] != ""; i++)
+    {
+        contentLength = strlen(params[i][0]) + strlen(params[i][1]) + 2; // 2字节是两个长度值
+        paddingLength = (contentLength % 8) == 0 ? 0 : 8 - (contentLength % 8);
+        paramsRecordp = (FCGI_ParamsRecord *)malloc(sizeof(FCGI_ParamsRecord) + contentLength + paddingLength);
+        paramsRecordp->nameLength = (unsigned char)strlen(params[i][0]);    // 填充参数值
+        paramsRecordp->valueLength = (unsigned char)strlen(params[i][1]);   // 填充参数名
+        paramsRecordp->header = makeHeader(FCGI_PARAMS, FCGI_REQUEST_ID, contentLength, paddingLength);
+        memset(paramsRecordp->data, 0, contentLength + paddingLength);
+        memcpy(paramsRecordp->data, params[i][0], strlen(params[i][0]));
+        memcpy(paramsRecordp->data + strlen(params[i][0]), params[i][1], strlen(params[i][1]));
+        str_len = safe_write(sock, paramsRecordp, 8 + contentLength + paddingLength);
+		if(-1 == str_len){
+            Debug("Error:Write beginRecord failed!\n");
+		}
+        fwrite(paramsRecordp,1,8+contentLength+paddingLength,fp_send);
+        free(paramsRecordp);
+    }
+
+    // 传递FCGI_STDIN参数
+    FCGI_Header stdinHeader;
+    stdinHeader = makeHeader(FCGI_STDIN, FCGI_REQUEST_ID, 0, 0);
+    safe_write(sock, &stdinHeader, sizeof(stdinHeader));
+    fwrite(&stdinHeader,1,sizeof(stdinHeader),fp_send);
+    
+    // 读取解析FASTCGI应用响应的数据
+    FCGI_Header respHeader;
+    char *message;
+    str_len = safe_read(sock, &respHeader, 8);
+	if(-1 == str_len){
+        Debug("Error:read responder failed!\n");
+	}
+    
+    if(respHeader.type == FCGI_STDOUT){
+        contentLengthR = ((int)respHeader.contentLengthB1 << 8) + (int)respHeader.contentLengthB0;
+        message = (char *)malloc(contentLengthR);
+        read(sock, message, contentLengthR);
+    }
+    
+    safe_write(c_sockfd, status, strlen(status));    // 发送响应报文状态行
+    safe_write(c_sockfd, header, strlen(header));    // 发送响应报文消息头
+    safe_write(c_sockfd, message, contentLengthR);
+    fwrite(status,1,strlen(status),fp_send);
+    fwrite(header,1,strlen(header),fp_send);
+    fwrite(message,1,contentLengthR,fp_send);
+
+printf("123\n");
+    fclose(fp_send);
+    free(message);
     close(c_sockfd);
 }
 
