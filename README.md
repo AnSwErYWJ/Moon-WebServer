@@ -15,7 +15,7 @@
 ```
 make
 sudo ./Moon
-#打开浏览器，在地址栏输入"127.0.0.1:8080/one.html"或"127.0.0.1:8080/two.html" 
+#打开浏览器，在地址栏输入"127.0.0.1:8080/www/one.html"或"127.0.0.1:8080/www/two.html" 
 make clean
 ```
 
