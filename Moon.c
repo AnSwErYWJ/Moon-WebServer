@@ -21,6 +21,8 @@
 #include <sys/types.h>
 #include <signal.h>
 
+static int ser_sockfd,cli_sockfd;
+
 /*
  * listen()的包裹函数，可以自定义backlog
  */
@@ -39,6 +41,7 @@ static void Listen(int fd,int backlog)
 /*退出函数*/
 void quit(int signo)
 {
+    close(ser_sockfd);
     exit(EXIT_SUCCESS);
 }
 
@@ -46,7 +49,6 @@ int main(int argc,const char *argv[])
 {
     struct sockaddr_in ser_addr,cli_addr;
     char buf[MAXSIZE];
-    int ser_sockfd,cli_sockfd;
     socklen_t cli_addr_size;
     int thread_count = 0;
     pthread_t threads[MAX_THREAD_NUM];
@@ -89,7 +91,7 @@ int main(int argc,const char *argv[])
         }
         
         /*client log*/
-        fp_log = fopen("cli_log.txt","a+");
+        fp_log = fopen("log/cli_log.txt","a+");
         if(fp_log == NULL)
         {
             Debug("Error:fopen()\n");
