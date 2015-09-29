@@ -1,2 +1,229 @@
-# å‚è€ƒèµ„æ–™
-## HTTP
+# ²Î¿¼×ÊÁÏ
+## WEB ·şÎñÆ÷Ö´ĞĞµÄÈÎÎñ
+Ò»°ãµÄÉÌÓÃ WEB ·şÎñÆ÷¶¼ÒªÖ´ĞĞÏÂÃæÕâĞ©ÈÎÎñ£º
+
+1. ½¨Á¢Á¬½Ó¡ª¡ª½ÓÊÜÒ»¸ö¿Í»§¶ËÁ¬½Ó¡£
+2. ½ÓÊÕÇëÇó¡ª¡ª´ÓÍøÂçÖĞ¶ÁÈ¡Ò»Ìõ HTTP ÇëÇó±¨ÎÄ¡£ 
+3. ´¦ÀíÇëÇó¡ª¡ª¶ÔÇëÇó±¨ÎÄ½øĞĞ½âÊÍ£¬²¢²ÉÈ¡ĞĞ¶¯¡£ 
+4. ·ÃÎÊ×ÊÔ´¡ª¡ª·ÃÎÊ±¨ÎÄÖĞÖ¸¶¨µÄ×ÊÔ´¡£
+5. ¹¹½¨ÏìÓ¦¡ª¡ª´´½¨´øÓĞÕıÈ·Ê×²¿µÄ HTTP ÏìÓ¦±¨ÎÄ¡£ 
+6. ·¢ËÍÏìÓ¦¡ª¡ª½«ÏìÓ¦»ØËÍ¸ø¿Í»§¶Ë¡£ 
+7. ¼ÇÂ¼ÊÂÎñ´¦Àí¹ı³Ì¡ª¡ª½«ÓëÒÑÍê³ÉÊÂÎñÓĞ¹ØµÄÄÚÈİ¼ÇÂ¼ÔÚÒ»¸öÈÕÖ¾ÎÄ¼şÖĞ¡£
+
+### ½ÓÊÕÇëÇó
+Ò»¸ö HTTP ÇëÇó±¨ÎÄÓÉÇëÇóĞĞ£¨request line£©¡¢ÇëÇóÍ·²¿£¨header£©¡¢¿ÕĞĞºÍÇëÇóÊı¾İ 4 ¸ö²¿·Ö×é³É¡£ÀıÈçµ±ÎÒÃÇÔÚä¯ÀÀÆ÷ÖĞ·ÃÎÊ£º127.0.0.1/index.html Ê±£¬ä¯ÀÀÆ÷·¢ËÍ¸ø WEB ·şÎñÆ÷µÄÇëÇó±¨ÎÄ´óÖÂÈçÏÂ£º
+```
+/*ÇëÇóĞĞ*/
+GET  /index.html  HTTP/1.1  
+
+/*ÇëÇóÍ·²¿*/
+User-Agent: Mozilla/5.0
+
+/*
+ * µäĞÍµÄÇëÇóÍ·£º
+ * User-Agent£º²úÉúÇëÇóµÄä¯ÀÀÆ÷ÀàĞÍ¡£ 
+ * Accept£º¿Í»§¶Ë¿ÉÊ¶±ğµÄÄÚÈİÀàĞÍÁĞ±í¡£ 
+ * Host£ºÇëÇóµÄÖ÷»úÃû£¬ÔÊĞí¶à¸öÓòÃûÍ¬´¦Ò»¸ö IP µØÖ·£¬¼´ĞéÄâÖ÷»ú¡£
+ */
+```
+1. ÇëÇóĞĞÓÉÇëÇó·½·¨×Ö¶Î¡¢URL ×Ö¶ÎºÍ HTTP Ğ­Òé°æ±¾×Ö¶Î 3 ¸ö×Ö¶Î×é³É£¬ËüÃÇÓÃ¿Õ¸ñ·Ö¸ô¡£HTTP Ğ­ÒéµÄÇëÇó·½·¨ÓĞ GET¡¢POST¡¢HEAD¡¢PUT¡¢DELETE¡¢OPTIONS¡¢TRACE¡¢CONNECT¡£
+2. ÇëÇóÍ·²¿ÓÉ ¹Ø¼ü×Ö/Öµ¶Ô ×é³É£¬Ã¿ĞĞÒ»¶Ô£¬¹Ø¼ü×ÖºÍÖµÓÃÓ¢ÎÄÃ°ºÅ ¡°:¡± ·Ö¸ô¡£ÇëÇóÍ·²¿Í¨Öª·şÎñÆ÷ÓĞ¹ØÓÚ¿Í»§¶ËÇëÇóµÄĞÅÏ¢¡£
+3. ×îºóÒ»¸öÇëÇóÍ·Ö®ºóÊÇÒ»¸ö¿ÕĞĞ£¬·¢ËÍ»Ø³µ·ûºÍ»»ĞĞ·û£¬Í¨Öª·şÎñÆ÷ÒÔÏÂ²»ÔÙÓĞÇëÇóÍ·¡£
+4. ÇëÇóÊı¾İ²»ÔÚGET ·½·¨ÖĞÊ¹ÓÃ£¬¶øÊÇÔÚ POST ·½·¨ÖĞÊ¹ÓÃ¡£POST ·½·¨ÊÊÓÃÓÚĞèÒª¿Í»§ÌîĞ´±íµ¥µÄ³¡ºÏ¡£
+
+###´¦ÀíÇëÇó
+´¦ÀíÇëÇó£¬Ò»µ© Web ·şÎñÆ÷ÊÕµ½ÁËÇëÇó£¬¾Í¿ÉÒÔ¸ù¾İ·½·¨¡¢×ÊÔ´¡¢Ê×²¿ºÍ¿ÉÑ¡µÄÖ÷Ìå²¿·ÖÀ´¶ÔÇëÇó½øĞĞ´¦ÀíÁË¡£
+±¾ÏîÄ¿ÖĞ´¦ÀíÇëÇóµÄÁ÷³ÌÊÇ£¬Ê×ÏÈ¼ì²éÇëÇóĞ­ÒéÊÇ·ñÊÇ HTTP Ğ­Òé£¬È»ºó£¬¼ì²éÇëÇóÊÇ·ñÊÇ GET ÇëÇó£¬×îºó£¬ÌáÈ¡ä¯ÀÀÆ÷ÇëÇóµÄÎÄ¼şÃû¡£
+
+###·ÃÎÊ×ÊÔ´
+·ÃÎÊ×ÊÔ´£¬¸ù¾İä¯ÀÀÆ÷ÇëÇóµÄÎÄ¼şÃû¶ÁÈ¡ÎÄ¼şÄÚÈİ£¬²¢½«ÄÚÈİ·¢ËÍ¸øä¯ÀÀÆ÷¡£±¾ÏîÄ¿ÊµÏÖÁË¶ÁÈ¡¾²Ì¬ html¡¢jpg ºÍ php ÎÄ¼ş¡£
+
+###¹¹½¨ÏìÓ¦
+¹¹½¨ÏìÓ¦¾ÍÊÇ¹¹½¨Ò»¸öÏìÓ¦±¨ÎÄ·¢ËÍ¸øä¯ÀÀÆ÷¡£
+HTTP ÏìÓ¦±¨ÎÄÖ÷ÒªÓÉ×´Ì¬ĞĞ¡¢ÏìÓ¦Í·²¿¡¢¿ÕĞĞÒÔ¼°ÏìÓ¦ÕıÎÄ 4 ²¿·Ö×é³É¡£
+×´Ì¬ĞĞÓÉ 3 ²¿·Ö×é³É£¬·Ö±ğÎª£ºHTTP Ğ­Òé°æ±¾£¬×´Ì¬´úÂë£¬×´Ì¬´úÂëÃèÊö¡£
+```
+char status[] = "HTTP/1.0 200 OK\r\n";
+```
+×´Ì¬´úÂëÎª 3 Î»Êı×Ö£¬ÓÉ 1¡¢2¡¢3¡¢4 ÒÔ¼° 5 ¿ªÍ·£¬2 ¿ªÍ·µÄÖ¸ÏìÓ¦³É¹¦£¬3 ¿ªÍ·µÄÖ¸ÖØ¶¨Ïò£¬4 ¿ªÍ·µÄÖ¸¿Í»§¶Ë´íÎó£¬5 ¿ªÍ·µÄÖ¸·şÎñ¶Ë´íÎó¡£ÏêÏ¸µÄ×´Ì¬Âë¾Í²»½éÉÜÁË£¬ÕâÀïÁĞ¾Ù¼¸¸ö³£¼ûµÄ£º
+1. 200£ºÏìÓ¦³É¹¦
+2. 400£º´íÎóµÄÇëÇó£¬ÓÃ»§·¢ËÍµÄHTTPÇëÇó²»ÕıÈ· 
+3. 404£ºÎÄ¼ş²»´æÔÚ£¬Ò²¾ÍÊÇHTTPÇëÇóURI´íÎó 
+4. 500£º·şÎñÆ÷ÄÚ²¿´íÎó
+
+ÏìÓ¦Í·²¿ÓëÇëÇóÍ·²¿ÀàËÆ£¬Ò²°üº¬ÁËºÜ¶àÓĞÓÃµÄĞÅÏ¢¡£ÈçÏìÓ¦ÄÚÈİµÄÀàĞÍ£¬Í¼Æ¬ÀàĞÍÎª£º Content-Type:image/jpeg¡£
+```
+char header[] = "Server: A Simple Web Server\r\nContent-Type: image/jpeg\r\n\r\n";
+```
+
+##WEB ·şÎñÆ÷µÄ¼¸ÖÖÄ£ĞÍ
+¸ßĞÔÄÜµÄ WEB ·şÎñÆ÷ÄÜ¹»Í¬Ê±Ö§³ÖÊıÇ§ÌõÁ¬½Ó¡£ÕâĞ©Á¬½ÓÊ¹µÃ·şÎñÆ÷¿ÉÒÔÓëÊÀ½ç¸÷µØµÄ¿Í»§¶Ë½øĞĞÍ¨ĞÅ£¬Ã¿¸ö¿Í»§¶Ë¶¼Ïò·şÎñÆ÷´ò¿ªÁËÒ»Ìõ»ò¶àÌõÁ¬½Ó¡£ÒòÎªÇëÇó¿ÉÄÜ»áÔÚÈÎÒâÊ±¿Ìµ½´ï£¬ËùÒÔ WEB ·şÎñÆ÷»á²»Í£µØ¹Û²ìÓĞÎŞĞÂµÄ WEB ÇëÇó¡£²»Í¬µÄ WEB ·şÎñÆ÷Ä£ĞÍ»áÒÔ²»Í¬µÄ·½Ê½ÎªÇëÇó·şÎñ¡£
+###µ¥Ïß³Ì WEB ·şÎñÆ÷
+µ¥Ïß³ÌµÄ WEB ·şÎñÆ÷Ò»´ÎÖ»´¦ÀíÒ»¸öÇëÇó£¬Ö±µ½ÆäÍê³ÉÎªÖ¹¡£Ò»¸öÊÂÎñ´¦Àí½áÊøÖ®ºó£¬²ÅÈ¥´¦ÀíÏÂÒ»ÌõÁ¬½Ó¡£ÕâÖÖ½á¹¹Ò×ÓÚÊµÏÖ£¬µ«ÔÚ´¦Àí¹ı³ÌÖĞ£¬ËùÓĞÆäËûÁ¬½Ó¶¼»á±»ºöÂÔ¡£ÕâÑù»áÔì³ÉÑÏÖØµÄĞÔÄÜÎÊÌâ£¬Ö»ÊÊÓÃÓÚµÍ¸ººÉµÄ·şÎñÆ÷¡£
+###¶à½ø³Ì¼°¶àÏß³Ì WEB ·şÎñÆ÷
+¶à½ø³ÌºÍ¶àÏß³Ì WEB ·şÎñÆ÷ÓÃ¶à¸ö½ø³Ì£¬ »ò¸ü¸ßĞ§µÄÏß³ÌÍ¬Ê±¶ÔÇëÇó½øĞĞ´¦Àí¡£ ¿ÉÒÔ¸ù¾İĞèÒª´´½¨£¬»òÕßÔ¤ÏÈ´´½¨Ò»Ğ©Ïß³Ì / ½ø³Ì¡£ ÓĞĞ©·şÎñÆ÷»áÎªÃ¿ÌõÁ¬½Ó·ÖÅäÒ»¸öÏß³Ì / ½ø³Ì£¬µ«µ±·şÎñÆ÷Í¬Ê±Òª´¦Àí³É°Ù¡¢ÉÏÇ§£¬ÉõÖÁÊıÒÔÍò¼ÆµÄÁ¬½ÓÊ±£¬ĞèÒªµÄ½ø³Ì»òÏß³ÌÊıÁ¿¿ÉÄÜ»áÏûºÄÌ«¶àµÄÄÚ´æ»òÏµÍ³×ÊÔ´¡£Òò´Ë£¬ºÜ¶à¶àÏß³Ì WEB ·şÎñÆ÷¶¼»á¶ÔÏß³Ì / ½ø³ÌµÄ×î´óÊıÁ¿½øĞĞÏŞÖÆ¡£
+###¸´ÓÃ I/O µÄ·şÎñÆ÷
+ÎªÁËÖ§³Ö´óÁ¿µÄÁ¬½Ó£¬ºÜ¶à WEB ·şÎñÆ÷¶¼²ÉÓÃÁË¸´ÓÃ½á¹¹¡£ÔÚ¸´ÓÃ½á¹¹ÖĞ£¬ÒªÍ¬Ê±¼àÊÓËùÓĞÁ¬½ÓÉÏµÄ»î¶¯¡£µ±Á¬½ÓµÄ×´Ì¬·¢Éú±ä»¯Ê±£¨±ÈÈç£¬ÓĞÊı¾İ¿ÉÓÃ£¬»ò³öÏÖ´íÎóÊ±£© £¬¾Í¶ÔÄÇÌõÁ¬½Ó½øĞĞÉÙÁ¿µÄ´¦Àí£»´¦Àí½áÊøÖ®ºó£¬½«Á¬½Ó·µ»Øµ½¿ª·ÅÁ¬½ÓÁĞ±íÖĞ£¬µÈ´ıÏÂÒ»´Î×´Ì¬±ä»¯¡£Ö»ÓĞÔÚÓĞÊÂÇé¿É×öÊ±²Å»á¶ÔÁ¬½Ó½øĞĞ´¦Àí£»ÔÚ¿ÕÏĞÁ¬½ÓÉÏµÈ´ıµÄÊ±ºò²¢²»»á°ó¶¨Ïß³ÌºÍ½ø³Ì
+###¸´ÓÃµÄ¶àÏß³Ì WEB ·şÎñÆ÷
+ÓĞĞ©ÏµÍ³»á½«¶àÏß³ÌºÍ¸´ÓÃ¹¦ÄÜ½áºÏÔÚÒ»Æğ£¬ÒÔÀûÓÃ¼ÆËã»úÆ½Ì¨ÉÏµÄ¶à¸ö CPU¡£¶à¸öÏß³Ì£¨Í¨³£ÊÇÒ»¸öÎïÀí´¦ÀíÆ÷£©ÖĞµÄÃ¿Ò»¸ö¶¼ÔÚ¹Û²ì´ò¿ªµÄÁ¬½Ó£¨»ò´ò¿ªµÄÁ¬½ÓÖĞµÄÒ»¸ö×Ó¼¯£© £¬²¢¶ÔÃ¿ÌõÁ¬½ÓÖ´ĞĞÉÙÁ¿µÄÈÎÎñ¡£
+
+##PHP Ö§³Ö
+Ä¿Ç° WEB ·şÎñÆ÷¿ÉÒÔ´¦Àí html ÎÄ¼şºÍ jpg Í¼Æ¬ÁË¡£ÏÂÃæ¿¼ÂÇÔõÑùÖ§³Ö½âÎö php ÎÄ¼ş£¬ÒÔÇ°ÒªÖ´ĞĞ¶¯Ì¬³ÌĞò¶¼ÊÇÍ¨¹ı CGI ½Ó¿ÚÀ´Íê³ÉµÄ¡£CGI È«³ÆÊÇ ¡°Í¨ÓÃÍø¹Ø½Ó¿Ú¡±(Common Gateway Interface)£¬ Ëü¿ÉÒÔÈÃÒ»¸ö¿Í»§¶Ë£¬´ÓÍøÒ³ä¯ÀÀÆ÷ÏòÖ´ĞĞÔÚ Web ·şÎñÆ÷ÉÏµÄ³ÌĞòÇëÇóÊı¾İ¡£ CGI ÃèÊöÁË¿Í»§¶ËºÍÕâ¸ö³ÌĞòÖ®¼ä´«ÊäÊı¾İµÄÒ»ÖÖ±ê×¼¡£ CGI µÄÒ»¸öÄ¿µÄÊÇÒª¶ÀÁ¢ÓÚÈÎºÎÓïÑÔµÄ£¬ËùÒÔ CGI ¿ÉÒÔÓÃÈÎºÎÒ»ÖÖÓïÑÔ±àĞ´£¬Ö»ÒªÕâÖÖÓïÑÔ¾ßÓĞ±ê×¼ÊäÈë¡¢Êä³öºÍ»·¾³±äÁ¿£¬ Èç php µÈ¡£
+
+FastCGI ÊÇ Web ·şÎñÆ÷ºÍ´¦Àí³ÌĞòÖ®¼äÍ¨ĞÅµÄÒ»ÖÖĞ­Òé£¬ ÊÇ CGI µÄÒ»ÖÖ¸Ä½ø·½°¸£¬ËüÎªËùÓĞÒòÌØÍøÓ¦ÓÃÌá¹©¸ßĞÔÄÜ¡£FastCGI ÏñÊÇÒ»¸ö³£×¤ (long-live) ĞÍµÄ CGI£¬ Ëü¿ÉÒÔÒ»Ö±Ö´ĞĞ£¬ÔÚÇëÇóµ½´ïÊ±²»»á»¨·ÑÊ±¼äÈ¥ fork Ò»¸ö½ø³ÌÀ´´¦Àí(ÕâÊÇ CGI ×îÎªÈËÚ¸²¡µÄ fork-and-execute Ä£Ê½)¡£ ÕıÊÇÒòÎªËûÖ»ÊÇÒ»¸öÍ¨ĞÅĞ­Òé£¬Ëü»¹Ö§³Ö·Ö²¼Ê½µÄÔËËã£¬¼´ FastCGI ³ÌĞò¿ÉÒÔÔÚÍøÕ¾·şÎñÆ÷ÒÔÍâµÄÖ÷»úÉÏÖ´ĞĞ²¢ÇÒ½ÓÊÜÀ´×ÔÆäËüÍøÕ¾·şÎñÆ÷À´µÄÇëÇó¡£
+
+FastCGI ÊÇÓïÑÔÎŞ¹ØµÄ¡¢¿ÉÉìËõ¼Ü¹¹µÄ CGI ¿ª·ÅÀ©Õ¹£¬½« CGI ½âÊÍÆ÷½ø³Ì±£³ÖÔÚÄÚ´æÖĞ£¬ÒÔ´Ë»ñµÃ½Ï¸ßµÄĞÔÄÜ¡£ CGI ³ÌĞò·´¸´¼ÓÔØÊÇ CGI ĞÔÄÜµÍÏÂµÄÖ÷ÒªÔ­Òò£¬Èç¹û CGI ³ÌĞò±£³ÖÔÚÄÚ´æÖĞ²¢½ÓÊÜ FastCGI ½ø³Ì¹ÜÀíÆ÷µ÷¶È£¬ Ôò¿ÉÒÔÌá¹©Á¼ºÃµÄĞÔÄÜ¡¢ÉìËõĞÔ¡¢Fail-Over ÌØĞÔµÈ¡£
+
+Ò»°ãÇé¿öÏÂ£¬FastCGI µÄÕû¸ö¹¤×÷Á÷³ÌÊÇÕâÑùµÄ£º
+1. Web Server Æô¶¯Ê±ÔØÈë FastCGI ½ø³Ì¹ÜÀíÆ÷£¨PHP-FPM »ò Apache Module)¡£
+2. FastCGI ½ø³Ì¹ÜÀíÆ÷×ÔÉí³õÊ¼»¯£¬Æô¶¯¶à¸ö CGI ½âÊÍÆ÷½ø³Ì(¿É¼û¶à¸ö php-cgi)²¢µÈ´ıÀ´×Ô Web Server µÄÁ¬½Ó¡£
+3. µ±¿Í»§¶ËÇëÇóµ½´ï Web Server Ê±£¬FastCGI ½ø³Ì¹ÜÀíÆ÷Ñ¡Ôñ²¢Á¬½Óµ½Ò»¸ö CGI ½âÊÍÆ÷¡£ Web server ½« CGI »·¾³±äÁ¿ºÍ±ê×¼ÊäÈë·¢ËÍµ½ FastCGI ×Ó½ø³Ì php-cgi¡£
+4. FastCGI ×Ó½ø³ÌÍê³É´¦Àíºó½«±ê×¼Êä³öºÍ´íÎóĞÅÏ¢´ÓÍ¬Ò»Á¬½Ó·µ»Ø Web Server¡£µ± FastCGI ×Ó½ø³Ì¹Ø±ÕÁ¬½ÓÊ±£¬ ÇëÇó±ã¸æ´¦ÀíÍê³É¡£FastCGI ×Ó½ø³Ì½Ó×ÅµÈ´ı²¢´¦ÀíÀ´×Ô FastCGI ½ø³Ì¹ÜÀíÆ÷(ÔËĞĞÔÚ Web Server ÖĞ)µÄÏÂÒ»¸öÁ¬½Ó¡£ÔÚ CGI Ä£Ê½ÖĞ£¬php-cgi ÔÚ´Ë±ãÍË³öÁË¡£
+
+##FastCGI Ğ­Òé¹æ·¶
+µ± WEB ·şÎñÆ÷½ÓÊÕµ½Ò»¸ö PHP ÎÄ¼şÇëÇóÊ±£¬WEB ·şÎñÆ÷»áÍ¨¹ı FastCGI ½«ÇëÇó×ª·¢¸ø FastCGI ½ø³Ì¹ÜÀíÆ÷£¨¼´ PHP-FPM£©£¬FastCGI ½ø³Ì¹ÜÀíÆ÷½ÓÊÕµ½ÇëÇóºó£¬µ÷ÓÃ php ½âÊÍÆ÷Ö´ĞĞ php ÎÄ¼ş£¬È»ºó½«Ö´ĞĞ½á¹û·µ»Ø¸øWEB·şÎñÆ÷£¬Ö®ºó WEB ·şÎñÆ÷ÔÙ½« FastCGI ½ø³Ì¹ÜÀíÆ÷·µ»ØµÄ½á¹û´¦Àí³É HTTP ÏìÓ¦±¨ÎÄ¸ñÊ½·¢ËÍ¸øä¯ÀÀÆ÷¡£
+
+´ÓÉÏÃæÃèÊö¿ÉÒÔ¿´³ö£¬ä¯ÀÀÆ÷Óë WEB ·şÎñÆ÷Ö®¼äµÄÍ¨ĞÅĞ­ÒéÊÇ HTTP Ğ­Òé£¬ÄÇÃ´ WEB ·şÎñÆ÷Óë FastCGI ½ø³Ì¹ÜÀíÆ÷Ö®¼äÍ¨ĞÅĞ­ÒéÊÇÊ²Ã´ÄØ£¬´ğ°¸¾ÍÊÇ FastCGI Ğ­Òé¡£
+
+ÏêÏ¸Ğ­Òé¹æ·¶¿É²Î¼û£º 
+ÖĞÎÄ°æ£ºhttp://andylin02.iteye.com/blog/648412 
+Ó¢ÎÄ°æ£ºhttp://www.fastcgi.com/devkit/doc/fcgi-spec.html
+
+FastCGI Ğ­Òé´ó¸ÅÁ÷³Ì£º
+ÇëÇóÓÉ FCGI_BEGIN_REQUEST ¿ªÊ¼£¬FCGI_PARAMS ±íÊ¾ĞèÒª´«µİ»·¾³±äÁ¿ (PHPÖĞµÄ $_SERVER Êı×é¾ÍÊÇÍ¨¹ı FCGI_PARAMS À´´«µİµÄ£¬µ±È»Äú»¹¿ÉÒÔ¸½¼Ó×Ô¶¨ÒåµÄÊı¾İ)¡£FCGI_STDIN ±íÊ¾Ò»¸öÊäÈëµÄ¿ªÊ¼£¬±ÈÈçÄúĞèÒª POST ¹ıÈ¥µÄÊı¾İ¡£FCGI_STDOUT ºÍ FCGI_STDERR±êÊ¶Ó¦ÓÃ¿ªÊ¼ÏìÓ¦¡£FCGI_END_REQUEST ±íÊ¾Ò»´ÎÇëÇóµÄÍê³É£¬ÓÉÓ¦ÓÃ·¢ËÍ¡£
+
+FastCGI ÊÇ»ùÓÚÁ÷µÄĞ­Òé£¬²¢ÇÒÊÇ 8 ×Ö½Ú¶ÔÆë£¬Òò´Ë²»ĞèÒª¿¼ÂÇ×Ö½ÚĞò£¬µ«ÊÇÒª¿¼ÂÇÌî³ä¡£FastCGI µÄ°üÍ·ÊÇ¹Ì¶¨µÄ 8 ×Ö½Ú£¬²»Í¬µÄÇëÇóÓĞ²»Í¬µÄ°üÌå½á¹¹¡£°üÍ·ºÍ°üÌå×é³ÉÒ»¸ö Record(¼ÇÂ¼)¡£¾ßÌåÇë²Î¿¼Ğ­Òé¹æ·¶¡£°üÍ·¼ûÏÂÃæµÄ FCGI_Header ½á¹¹Ìå£¬FCGI_BEGIN_REQUEST ÇëÇó°üÌå¼ûÏÂÃæµÄ FCGI_BeginRequestBody ½á¹¹Ìå£¬ FCGI_BEGIN_REQUEST ÇëÇó¼ÇÂ¼¼ûÏÂÃæµÄ FCGI_BeginRequestRecord½á¹¹Ìå£¬FCGI_PARAMS ´«µİ²ÎÊı¼ÇÂ¼¼ûÏÂÃæµÄ FCGI_ParamsRecord ½á¹¹Ìå£º
+```
+/*
+ * °üÍ·
+ */
+typedef struct{
+    unsigned char version;
+    unsigned char type;
+    unsigned char requestIdB1;
+    unsigned char requestIdB0;
+    unsigned char contentLengthB1;
+    unsigned char contentLengthB0;
+    unsigned char paddingLength;
+    unsigned char reserved;
+}FCGI_Header;
+
+/*
+ * FCGI_BEGIN_REQUESTÇëÇó°üÌå
+ */
+typedef struct{
+    unsigned char roleB1;
+    unsigned char roleB0;
+    unsigned char flags;
+    unsigned char reserved[5];
+}FCGI_BeginRequestBody;
+
+/*
+ * FCGI_BEGIN_REQUESTÇëÇó¼ÇÂ¼
+ */
+typedef struct{
+    FCGI_Header header;
+    FCGI_BeginRequestBody body;
+}FCGI_BeginRequestRecord;
+
+/*
+ * FCGI_PARAMS´«µİ²ÎÊı¼ÇÂ¼
+ */
+typedef struct{
+    FCGI_Header header;
+    unsigned char nameLength;
+    unsigned char valueLength;
+    unsigned char data[0];
+}FCGI_ParamsRecord;
+```
+
+ÎªÁË¼ò»¯ÏîÄ¿µÄ¸´ÔÓĞÔ£¬ÏîÄ¿ÖĞ»áºöÂÔ FCGI_STDERR ºÍ FCGI_END_REQUEST¡£WEB ·şÎñÆ÷´¦Àí PHP ÎÄ¼şÇëÇóÊ±£¬Ê×ÏÈ»áÊ¹ÓÃ FCGI_BEGIN_REQUEST ¼ÇÂ¼½á¹¹ÌåÏò FastCGI ½ø³Ì¹ÜÀíÆ÷¿ªÊ¼ÇëÇó£¬È»ºóÊ¹ÓÃ FCGI_PARAMS ¼ÇÂ¼½á¹¹ÌåÏò FastCGI ½ø³Ì¹ÜÀíÆ÷´«µİ²ÎÊı£¬°üº¬ php ÎÄ¼şÃû¡¢query ×Ö·û´®£¬HTTP ÇëÇó·½·¨£¬Ö®ºó·¢ËÍÒ»¸ö¿Õ°üÌåµÄ STDIN °üÀ´½áÊøÕâ´ÎÇëÇó¡£ÓÉÓÚÊÇ¿Õ°üÌå£¬ËùÒÔÖ±½Ó·¢ËÍ type Îª FCGI_STDIN µÄ FCGI_Header ½á¹¹Ìå¾ÍĞĞÁË¡£
+```
+// Ê×ÏÈ¹¹ÔìÒ»¸öFCGI_BeginRequestRecord½á¹¹
+    FCGI_BeginRequestRecord beginRecord;
+    beginRecord.header = 
+        makeHeader(FCGI_BEGIN_REQUEST, FCGI_REQUEST_ID, sizeof(beginRecord.body), 0);
+    beginRecord.body = makeBeginRequestBody(FCGI_RESPONDER);
+    str_len = write(sock, &beginRecord, sizeof(beginRecord));
+```
+
+ÉÏÃæµÄ´úÂë¹¹ÔìÒ»¸öFCGI_Header½á¹¹ÌåºÍFCGI_BeginRequestBody½á¹¹Ìå×é³ÉÒ»¸öFCGI_BEGIN_REQUEST¼ÇÂ¼£¬·¢ËÍ¸øFastCGI½ø³Ì¹ÜÀíÆ÷±íÊ¾¿ªÊ¼ÇëÇó¡£
+```
+// ´«µİFCGI_PARAMS²ÎÊı
+    char *params[][2] = {
+        {"SCRIPT_FILENAME", "/home/shiyanlou/php-server/test.php"}, 
+        {"REQUEST_METHOD", "GET"}, 
+        {"QUERY_STRING", "name=shiyanlou"}, 
+        {"", ""}
+    };
+
+    int i, contentLength, paddingLength;
+    FCGI_ParamsRecord *paramsRecordp;
+    for(i = 0; params[i][0] != ""; i++){
+        contentLength = strlen(params[i][0]) + strlen(params[i][1]) + 2; // 2×Ö½ÚÊÇÁ½¸ö³¤¶ÈÖµ
+        paddingLength = (contentLength % 8) == 0 ? 0 : 8 - (contentLength % 8);
+        paramsRecordp = (FCGI_ParamsRecord *)malloc(sizeof(FCGI_ParamsRecord) + contentLength + paddingLength);
+        paramsRecordp->nameLength = (unsigned char)strlen(params[i][0]);    // Ìî³ä²ÎÊıÖµ
+        paramsRecordp->valueLength = (unsigned char)strlen(params[i][1]);   // Ìî³ä²ÎÊıÃû
+        paramsRecordp->header = 
+            makeHeader(FCGI_PARAMS, FCGI_REQUEST_ID, contentLength, paddingLength);
+        memset(paramsRecordp->data, 0, contentLength + paddingLength);
+        memcpy(paramsRecordp->data, params[i][0], strlen(params[i][0]));
+        memcpy(paramsRecordp->data + strlen(params[i][0]), params[i][1], strlen(params[i][1]));
+        str_len = write(sock, paramsRecordp, 8 + contentLength + paddingLength);
+
+        if(-1 == str_len){
+            errorHandling("Write beginRecord failed!");
+        }
+        printf("Write params %s  %s\n",params[i][0], params[i][1]);
+        free(paramsRecordp);
+    }
+```
+
+ÇëÇó¿ªÊ¼ºó£¬WEB ·şÎñÆ÷Í¨¹ıÉÏÃæµÄ´úÂëÏò FastCGI ½ø³Ì¹ÜÀíÆ÷·¢ËÍ FCGI_PARAMS ¼ÇÂ¼£¬ÓÉÓÚ FastCGI Ğ­Òé¹æ¶¨Êı¾İ 8 ×Ö½Ú¶ÔÆë£¬ĞèÒª¶ÔÊı¾İ½øĞĞ 8 ×Ö½Ú¶ÔÆë¡£
+
+```
+ // ´«µİFCGI_STDIN²ÎÊı
+    FCGI_Header stdinHeader;
+    stdinHeader = makeHeader(FCGI_STDIN, FCGI_REQUEST_ID, 0, 0);
+    write(sock, &stdinHeader, sizeof(stdinHeader));
+```
+
+´«µİÍêFCGI_PARAMS²ÎÊıºó£¬Í¨¹ıÉÏÃæµÄ´úÂëÏòFastCGI½ø³Ì¹ÜÀíÆ÷·¢ËÍÒ»¸ö¿Õ°üÌåµÄFCGI_STDIN¼ÇÂ¼£¬±íÊ¾ÇëÇó·¢ËÍÍê±Ï¡£
+```
+// ¶ÁÈ¡FastCGI½ø³Ì¹ÜÀíÆ÷ÏìÓ¦µÄÊı¾İ
+    FCGI_Header respHeader;
+    char *message;
+    str_len = read(sock, &respHeader, 8);
+    if(-1 == str_len){
+        errorHandling("read responder failed!");
+    }
+    //printf("Start read....\n");
+    //printf("fastcgi responder is : %X\n", respHeader.type);
+    //printf("fastcgi responder is : %X\n", respHeader.contentLengthB1);
+    //printf("fastcgi responder is : %X\n", respHeader.contentLengthB0);
+    if(respHeader.type == FCGI_STDOUT){
+        int contentLengthR = 
+            ((int)respHeader.contentLengthB1 << 8) + (int)respHeader.contentLengthB0;
+        message = (char *)malloc(contentLengthR);
+        read(sock, message, contentLengthR);
+        //printf("%s",message);
+        free(message);
+    }
+```
+
+ÉÏÃæµÄ´úÂëÊ×ÏÈ¶ÁÈ¡ FastCGI ½ø³Ì¹ÜÀíÆ÷ÏìÓ¦Êı¾İµÄÇ° 8 ×Ö½ÚÊı¾İ£¬Õâ 8 ×Ö½ÚÊı¾İÕıºÃÊÇÒ»¸ö FCGI_Header ½á¹¹Ìå±äÁ¿¡£È»ºóÍ¨¹ıÅĞ¶Ï type ÊÇ·ñÊÇ FastCGI ½ø³Ì¹ÜÀíÆ÷ÏìÓ¦Êı¾İ¡£Èç¹ûÊÇ£¬¶ÁÈ¡ÏìÓ¦Êı¾İ³¤¶È£¬Ö®ºó¼ÌĞø¶ÁÈ¡¸Ã³¤¶ÈµÄÊı¾İ¡£ÖÁ´Ë£¬WEB ·şÎñÆ÷Óë FastCGI ½ø³Ì¹ÜÀíÆ÷µÄ½»»¥½áÊøÁË¡£
+
+##ÅäÖÃ
+Ê×ÏÈ°²×° php-fpm£¬Ê¹ÓÃÈçÏÂÃüÁî£º
+```
+sudo apt-get install php5-fpm
+```
+È»ºóĞŞ¸Ä php5-fpm µÄÅäÖÃÎÄ¼ş£¬¼´ /etc/php5/fpm/pool.d/www.conf ÎÄ¼ş¡£
+
+¶¨Î»µ½µÚ 33 ĞĞ£¬½« listen = /var/run/php5-fpm.sock ¸ÄÎª listen = 127.0.0.1:9000£¬È»ºóÖ´ĞĞÒÔÏÂÃüÁîÔËĞĞ php-fpm¡£
+```
+sudo php5-fpm
+```
+Ê¹ÓÃ netstat -apn | head -10¿É ÒÔ²é¿´ÊÇ·ñÆô¶¯³É¹¦¡£
+FastCGI ºÍ PHP-FPM µÄ¹ØÏµ¿É²Î¼û£ºhttp://segmentfault.com/q/1010000000256516
