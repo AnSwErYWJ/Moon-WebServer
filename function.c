@@ -266,7 +266,7 @@ extern void handleRequest(void *client_sockfd)
     read(c_sockfd,buf,sizeof(buf)-1);
     
     /*request log*/
-    fp_req = fopen("log/request.txt","a+");
+    fp_req = fopen("log/req_log.txt","a+");
     if(fp_req == NULL)
     {
         Debug("Error:fopen()-request.txt");

@@ -1,0 +1,6 @@
+Tue Sep 29 15:05:35 2015
+ipaddress:127.0.0.1 port:3270
+Tue Sep 29 15:05:35 2015
+ipaddress:127.0.0.1 port:3526
+Tue Sep 29 15:05:42 2015
+ipaddress:127.0.0.1 port:3782
