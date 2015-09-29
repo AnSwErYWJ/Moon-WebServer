@@ -45,4 +45,5 @@ extern void sendDate(void *client_sockfd,char *filename);
 extern void catHTML(void *client_sockfd,char *filename);
 extern void catJPEG(void *client_sockfd,char *filename);
 extern void sendError(void *client_sockfd);
+
 #endif
