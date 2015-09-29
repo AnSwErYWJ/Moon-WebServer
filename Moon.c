@@ -6,8 +6,8 @@
 ************************************************************************/
 
 /*
-* moon服务器主程序
-*/
+ * Moon服务器主程序
+ */
 
 #include <stdio.h>
 #include "function.h"
@@ -94,7 +94,7 @@ int main(int argc,const char *argv[])
         fp_log = fopen("log/cli_log.txt","a+");
         if(fp_log == NULL)
         {
-            Debug("Error:fopen()\n");
+            Debug("Error:fopen()-log/cli_log.txt\n");
         }
         
         time(&t_log);
@@ -107,7 +107,7 @@ int main(int argc,const char *argv[])
         ret = pthread_create(threads+(thread_count++),NULL,(void *)handleRequest,&cli_sockfd);
         if(ret != 0)
         {
-            Debug("Error:pthread_create\n");
+            Debug("Error:pthread_create()\n");
         }
     }
 
