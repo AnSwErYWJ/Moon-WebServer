@@ -1,0 +1,5 @@
+#!/bin/bash
+#启动php-fpm
+
+sudo php5-fpm
+netstat -apn|head -10
